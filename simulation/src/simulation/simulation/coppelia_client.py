@@ -5,7 +5,7 @@
 # from std_msgs.msg import String
 
 #coppeliasim imports
-
+import time
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 from math import pi
 
@@ -41,7 +41,8 @@ class RoboticEnvironment():
         print('Joint handles retrieved')
         self.ee_handle = self.sim.getObject('/UR10/tip')
         print('End effector handle retrieved')
-        self.target_dummy = self.sim.getObject('/Dummy')
+        self.target_dummy = self.sim.getObject('/PickA58_1_1')
+        print(f"Position:{self.sim.getObjectPosition(self.target_dummy)}, Orientation: {self.sim.getObjectOrientation(self.target_dummy)}")
     def create_dummy(self,position,orientation):
         dummy_handle = self.sim.createDummy(0.01)
         self.sim.setObjectPosition(dummy_handle,-1,position)
@@ -49,45 +50,52 @@ class RoboticEnvironment():
         print("Target dummy created")
         return dummy_handle
 
-    # def setup_ik(self):
-    #     self.ik_env = self.simIK.createEnvironment()
-    #     self.ik_group = self.simIK.createGroup(self.ik_env)
-    #     self.simIK.setGroupCalculation(self.ik_env,self.ik_group,self.simIK.method_damped_least_squares, 0.3, 99)
-        
-    #     constraints =0
-    #     if hasattr(self.simIK,'constraint_pose'):
-    #         constraints = self.simIK.constraint_pose
-    #         print(f'using constraints {constraints}')
-    #     try:
-    #         self.simIK.addElementFromScene(self.ik_env,self.ik_group,self.base_handle,self.ee_handle,self.target_dummy,constraints)
-    #     except Exception as e:
-    #         print(f"Error setting up IK ")
     def setup_ik(self):
         self.ik_env = self.simIK.createEnvironment()
         self.ik_group = self.simIK.createGroup(self.ik_env)
-        self.simIK.setGroupCalculation(self.ik_env, self.ik_group, self.simIK.method_damped_least_squares, 0.3, 99)
-
-        constraints = 0
-        if hasattr(self.simIK, 'constraint_pose'):
+        self.simIK.setGroupCalculation(self.ik_env,self.ik_group,self.simIK.method_damped_least_squares, 0.3, 99)
+        
+        constraints =0
+        if hasattr(self.simIK,'constraint_pose'):
             constraints = self.simIK.constraint_pose
-            print(f'Using constraints: {constraints}')
-
+            print(f'using constraints {constraints}')
         try:
-            # Capture the extracted joint handles
-            extracted_joints = self.simIK.addElementFromScene(
-                self.ik_env, self.ik_group, self.base_handle, self.ee_handle, self.target_dummy, constraints
-            )
-            print("Extracted IK joint handles:", extracted_joints)
-
-            # Compare with manually defined joints
-            print("Manually defined joint handles:", self.joint_handles)
-
-            if set(self.joint_handles) != set(extracted_joints):
-                print("Mismatch detected! Using extracted joints instead.")
-                self.joint_handles = extracted_joints
-
+            self.simIK.addElementFromScene(self.ik_env,self.ik_group,self.base_handle,self.ee_handle,self.target_dummy,constraints)
         except Exception as e:
-            print(f"Error setting up IK: {e}")
+            print(f"Error setting up IK ")
+    # def setup_ik(self):
+    #     self.ik_env = self.simIK.createEnvironment()
+    #     self.ik_group = self.simIK.createGroup(self.ik_env)
+    #     self.simIK.setGroupCalculation(self.ik_env, self.ik_group, self.simIK.method_damped_least_squares, 0.3, 99)
+
+    #     constraints = 0
+    #     if hasattr(self.simIK, 'constraint_pose'):
+    #         constraints = self.simIK.constraint_pose
+    #         print(f'Using constraints: {constraints}')
+
+    #     try:
+    #         # Extract relevant IK data
+    #         ikElement, simToIkObjectMap, ikToSimObjectMap = self.simIK.addElementFromScene(
+    #             self.ik_env, self.ik_group, self.base_handle, self.ee_handle, self.target_dummy, constraints
+    #         )
+
+    #         print(f"simToIkObjectMap: {simToIkObjectMap}")
+    #         print(f"ikToSimObjectMap: {ikToSimObjectMap}")
+
+    #         # Extract joint handles from the mapping
+    #         extracted_joints = sorted(simToIkObjectMap.keys())  # Sorted to maintain order
+    #         print(f"Extracted joint handles from IK: {extracted_joints}")
+
+    #         # Compare with manually defined joints
+    #         print(f"Manually defined joint handles: {self.joint_handles}")
+
+    #         # If there’s a mismatch, update self.joint_handles
+    #         if set(self.joint_handles) != set(extracted_joints):
+    #             print("Mismatch detected! Using extracted joints instead.")
+    #             self.joint_handles = extracted_joints
+
+    #     except Exception as e:
+    #         print(f"Error setting up IK: {e}")
 
 
     def get_distance(self, handle1, handle2):
@@ -100,8 +108,8 @@ class RoboticEnvironment():
         #create a dummy at the pose
         # self.target_dummy =self.create_dummy([1.850,0.325,0.606],[-pi/2,0,-pi/2])
         self.setup_ik()
-        configs = [self.sim.getJointPosition(joint) for joint in self.joint_handles]
-        print(configs)
+        # configs = [self.sim.getJointPosition(joint) for joint in self.joint_handles]
+        # print(configs)
         tries=0
         result,reason,precision = self.simIK.handleGroup(self.ik_env,self.ik_group,{'syncWorlds':True})
         # ikconfigs= self.simIK.findConfig(self.ik_env,self.ik_group,self.joint_handles)
@@ -110,6 +118,8 @@ class RoboticEnvironment():
             reso =self.get_distance(self.ee_handle,self.target_dummy)
             
             if reso<0.01 or tries>1000:
+                configs = [self.sim.getJointPosition(joint) for joint in self.joint_handles]
+                print(configs)
                 break
             tries+=1
         if result:
@@ -119,7 +129,7 @@ class RoboticEnvironment():
             print("failed to handle IK group")
             return False
    
-        return configs
+        
     def get_target_configuration(self, target_pose):
         """
         Gets a joint configuration that would achieve the target_pose without moving the robot.
@@ -145,9 +155,9 @@ class RoboticEnvironment():
             # You can add more parameters such as 'cMetric', 'findAlt', or a callback 'cb' if needed.
         }
         #Give a config as seed
-        current_config = [self.sim.getJointPosition(joint) for joint in self.joint_handles]
+        current_config = [0]*len(self.joint_handles)#[self.sim.getJointPosition(joint) for joint in self.joint_handles]
         # Call simIK.findConfigs to search for a configuration that matches the target dummy pose.
-        configs = self.simIK.findConfigs(self.ik_env, self.ik_group, self.joint_handles, params, [0,0,0,0,0,0,0])
+        configs = self.simIK.findConfigs(self.ik_env, self.ik_group, self.joint_handles, params, current_config)
         
         if configs and len(configs) > 0:
             chosen_config = configs[0]  # The first configuration is the best one found.
@@ -193,9 +203,9 @@ class RoboticEnvironment():
             )
         except Exception as e:
             print("Error during simIK.findConfig:", e)
-            ik_joints = self.simIK.getConfigForTipPose(self.ik_env, self.ik_group)
-            print("IK-extracted joint handles:", ik_joints)
-            print("Manually defined joint handles:", self.joint_handles)
+            ik_joints = self.simIK.getConfigForTipPose(self.ik_env, self.ik_group,self.joint_handles)
+            
+            print("Joint handles:", self.joint_handles)
             return None
         
         if joint_config:
@@ -204,7 +214,24 @@ class RoboticEnvironment():
         else:
             print("No valid IK configuration found using simIK.findConfig.")
             return None
+ 
+    def move_to_config(self,target_config):
+        #moves manipulator to target c space config in radians
+        n_joints = len(self.joint_handles)
+        maxVel = [2.094395102]*n_joints #rad/s
+        maxAccel = [0.698131701]*n_joints #rad/s^2
+        maxJerk = [1.396263402]*n_joints #rad/s^3
 
+        state =self.sim.moveToConfig({
+
+            'joints':self.joint_handles,
+            'maxVel':maxVel,
+            'maxAccel':maxAccel,
+            'maxJerk':maxJerk,
+            'targetPos': target_config
+        }
+            )
+        return state
 
 
 def main():
@@ -212,8 +239,13 @@ def main():
     env.connect()
     env.initialize_handles()
     # env.move_to_configuration(9)
-    # env.get_target_configuration(9)
-    env.get_target_configuration_deprecated(9)
+    # env.set_joint_to_config([])
+    # env.move_to_config([0.23141078789183975, 1.2240021699772328, 1.9758523090714766, -1.541240219625911, 1.591575825355268, -0.7027195550025449])
+    # env.move_to_config([0.3989910845719479, 2.1435238238363294, -0.15221753013363898, -2.1080604947994734, 2.6365143775571744, 0.9988351580545902])#([0.38761265523134303, 1.4816286443570872, 1.3111003213041332, -2.5730493290047773, 2.7319379968363147, -0.2711492036361079])
+    env.move_to_config( [0.9003445122443277, 0.046505136555976545, 1.8862136715987274, -1.7909194909514174, 0.6752951007542772, -0.582252705721346])
+    while True:
+        pass
+    
     #keep the sim alive
     # rclpy.spin(env)
 

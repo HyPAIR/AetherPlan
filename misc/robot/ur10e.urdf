@@ -1,0 +1,1160 @@
+<?xml version="1.0"?>
+<robot name="UR10">
+    <link name="robot_base">
+        <collision name="UR10">
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_robot_base_coll_1.dae" />
+            </geometry>
+        </collision>
+        <collision name="UR10">
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_robot_base_coll_2.dae" />
+            </geometry>
+        </collision>
+        <collision name="UR10">
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_robot_base_coll_3.dae" />
+            </geometry>
+        </collision>
+        <collision name="UR10">
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_robot_base_coll_4.dae" />
+            </geometry>
+        </collision>
+        <visual name="link1_visible">
+            <origin xyz="0.000000 -0.000000 0.000000" rpy="-3.141593 3.141593 1.570796" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link1_visible_vis_1.dae" />
+            </geometry>
+            <material name="link1_visible_material">
+                <color rgba="0.870588 0.870588 0.870588 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="joint1" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="7.8539876462551" velocity="0.69813170079778" lower="-4.7123833177952" effort="600.0" />
+        <parent link="robot_base" />
+        <child link="link" />
+        <origin xyz="0.000000 0.008573 0.025650" rpy="-3.141593 3.141593 1.570796" />
+    </joint>
+    <link name="link">
+        <inertial>
+            <origin xyz="0.000013 0.011127 0.078389" rpy="-3.141593 3.141593 3.141587" />
+            <inertia ixx="0.1692311932075" ixy="2.7833861120415e-05" ixz="-7.9984044950768e-06" iyz="-0.0042308499121626" izz="0.13931359753545" iyy="0.16115592725554" />
+            <mass value="3.9000000953674" />
+        </inertial>
+        <collision name="link">
+            <origin xyz="0.000097 0.005258 0.081936" rpy="-3.141593 3.141593 3.141587" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_coll_1.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000097 0.005258 0.081936" rpy="-3.141593 3.141593 3.141587" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_coll_2.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000097 0.005258 0.081936" rpy="-3.141593 3.141593 3.141587" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_coll_3.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000097 0.005258 0.081936" rpy="-3.141593 3.141593 3.141587" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_coll_4.dae" />
+            </geometry>
+        </collision>
+        <visual name="link2_visible">
+            <origin xyz="0.000001 0.005467 0.081951" rpy="-3.141593 3.141593 3.141587" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link2_visible_vis_1.dae" />
+            </geometry>
+            <material name="link2_visible_material">
+                <color rgba="0.535294 0.535294 0.535294 1.0" />
+            </material>
+        </visual>
+        <visual name="link2_visible">
+            <origin xyz="0.000001 0.005467 0.081951" rpy="-3.141593 3.141593 3.141587" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link2_visible_vis_2.dae" />
+            </geometry>
+            <material name="link2_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link2_visible">
+            <origin xyz="0.000001 0.005467 0.081951" rpy="-3.141593 3.141593 3.141587" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link2_visible_vis_3.dae" />
+            </geometry>
+            <material name="link2_visible_material">
+                <color rgba="0.508235 0.761224 0.903529 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="joint2" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="4.7123730712378" velocity="0.69813170079778" lower="-7.8539978928125" effort="600.0" />
+        <parent link="link" />
+        <child link="link_2" />
+        <origin xyz="0.000000 0.092650 0.083350" rpy="-1.570802 -1.570796 0.000000" />
+    </joint>
+    <link name="link_2">
+        <inertial>
+            <origin xyz="-0.000099 0.261947 0.081394" rpy="-1.570796 3.141593 0.000016" />
+            <inertia ixx="1.0782173414335" ixy="6.788073169456e-05" ixz="-0.00042273619682866" iyz="-0.0095949933758114" izz="0.088431469072582" iyy="1.0657235105211" />
+            <mass value="8.8999996185303" />
+        </inertial>
+        <collision name="link">
+            <origin xyz="0.000201 0.299280 0.082155" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_2_coll_1.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000201 0.299280 0.082155" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_2_coll_2.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000201 0.299280 0.082155" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_2_coll_3.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000201 0.299280 0.082155" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_2_coll_4.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000201 0.299280 0.082155" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_2_coll_5.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.000201 0.299280 0.082155" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_2_coll_6.dae" />
+            </geometry>
+        </collision>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_1.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.870588 0.870588 0.870588 1.0" />
+            </material>
+        </visual>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_2.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.508235 0.761224 0.903529 1.0" />
+            </material>
+        </visual>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_3.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_4.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.535294 0.535294 0.535294 1.0" />
+            </material>
+        </visual>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_5.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.508235 0.761224 0.903529 1.0" />
+            </material>
+        </visual>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_6.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.535294 0.535294 0.535294 1.0" />
+            </material>
+        </visual>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_7.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link3_visible">
+            <origin xyz="-0.000006 0.298832 0.082017" rpy="-1.570796 3.141593 0.000016" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link3_visible_vis_8.dae" />
+            </geometry>
+            <material name="link3_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="joint3" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="8.7266464348174" velocity="0.69813170079778" lower="-3.8397245292329" effort="600.0" />
+        <parent link="link_2" />
+        <child link="link_3" />
+        <origin xyz="-0.000611 0.612098 0.019445" rpy="-3.141593 3.141593 -1.570780" />
+    </joint>
+    <link name="link_3">
+        <inertial>
+            <origin xyz="-0.200885 -0.167855 -0.063589" rpy="-1.570796 3.141593 2.268928" />
+            <inertia ixx="0.77788578299915" ixy="-4.6207927189547e-05" ixz="0.0003954820678502" iyz="-0.0074258560707778" izz="0.045863937269442" iyy="0.77102300852462" />
+            <mass value="6.0999999046326" />
+        </inertial>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_1.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_2.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_3.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_4.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_5.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_6.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_7.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.214026 -0.178957 -0.067470" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_3_coll_8.dae" />
+            </geometry>
+        </collision>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_1.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.870588 0.870588 0.870588 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_2.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_3.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_4.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.535294 0.535294 0.535294 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_5.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_6.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.508235 0.761224 0.903529 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_7.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.535294 0.535294 0.535294 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_8.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.508235 0.761224 0.903529 1.0" />
+            </material>
+        </visual>
+        <visual name="link4_visible">
+            <origin xyz="-0.214223 -0.178969 -0.064250" rpy="-1.570796 3.141593 2.268928" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link4_visible_vis_9.dae" />
+            </geometry>
+            <material name="link4_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="joint4" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="5.4105240012578" velocity="0.69813170079778" lower="-7.1558469627925" effort="600.0" />
+        <parent link="link_3" />
+        <child link="link_4" />
+        <origin xyz="-0.438718 -0.367343 -0.006609" rpy="3.141593 3.141593 0.698132" />
+    </joint>
+    <link name="link_4">
+        <inertial>
+            <origin xyz="0.002672 0.002989 0.051293" rpy="-1.570796 3.141593 -0.698135" />
+            <inertia ixx="0.17674324056484" ixy="8.0907998973623e-05" ixz="-0.00012238034839389" iyz="-0.0038166440940167" izz="0.12924619367018" iyy="0.16630603779714" />
+            <mass value="3.9000000953674" />
+        </inertial>
+        <collision name="link">
+            <origin xyz="0.001322 0.001337 0.054334" rpy="-1.570796 3.141593 -0.698135" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_4_coll_1.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.001322 0.001337 0.054334" rpy="-1.570796 3.141593 -0.698135" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_4_coll_2.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.001322 0.001337 0.054334" rpy="-1.570796 3.141593 -0.698135" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_4_coll_3.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="0.001322 0.001337 0.054334" rpy="-1.570796 3.141593 -0.698135" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_4_coll_4.dae" />
+            </geometry>
+        </collision>
+        <visual name="link5_visible">
+            <origin xyz="0.001367 0.001355 0.054328" rpy="-1.570796 3.141593 -0.698135" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link5_visible_vis_1.dae" />
+            </geometry>
+            <material name="link5_visible_material">
+                <color rgba="0.535294 0.535294 0.535294 1.0" />
+            </material>
+        </visual>
+        <visual name="link5_visible">
+            <origin xyz="0.001367 0.001355 0.054328" rpy="-1.570796 3.141593 -0.698135" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link5_visible_vis_2.dae" />
+            </geometry>
+            <material name="link5_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link5_visible">
+            <origin xyz="0.001367 0.001355 0.054328" rpy="-1.570796 3.141593 -0.698135" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link5_visible_vis_3.dae" />
+            </geometry>
+            <material name="link5_visible_material">
+                <color rgba="0.508235 0.761224 0.903529 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="joint5" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="4.7123880421778" velocity="0.69813170079778" lower="-7.8539829218725" effort="600.0" />
+        <parent link="link_4" />
+        <child link="link_5" />
+        <origin xyz="0.036829 0.043892 0.058404" rpy="-0.872662 1.570796 0.000000" />
+    </joint>
+    <link name="link_5">
+        <inertial>
+            <origin xyz="-0.000062 -0.004314 0.051294" rpy="-3.141593 3.141593 0.000001" />
+            <inertia ixx="0.17671244180707" ixy="0.00012466460550503" ixz="-5.1632341548073e-05" iyz="-0.0038235636945646" izz="0.16630731485677" iyy="0.12926801666521" />
+            <mass value="3.9000000953674" />
+        </inertial>
+        <collision name="link">
+            <origin xyz="-0.000101 -0.002182 0.054326" rpy="-3.141593 3.141593 0.000001" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_5_coll_1.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.000101 -0.002182 0.054326" rpy="-3.141593 3.141593 0.000001" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_5_coll_2.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.000101 -0.002182 0.054326" rpy="-3.141593 3.141593 0.000001" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_5_coll_3.dae" />
+            </geometry>
+        </collision>
+        <collision name="link">
+            <origin xyz="-0.000101 -0.002182 0.054326" rpy="-3.141593 3.141593 0.000001" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link_5_coll_4.dae" />
+            </geometry>
+        </collision>
+        <visual name="link6_visible">
+            <origin xyz="-0.000124 -0.002224 0.054320" rpy="-3.141593 3.141593 0.000001" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link6_visible_vis_1.dae" />
+            </geometry>
+            <material name="link6_visible_material">
+                <color rgba="0.535294 0.535294 0.535294 1.0" />
+            </material>
+        </visual>
+        <visual name="link6_visible">
+            <origin xyz="-0.000124 -0.002224 0.054320" rpy="-3.141593 3.141593 0.000001" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link6_visible_vis_2.dae" />
+            </geometry>
+            <material name="link6_visible_material">
+                <color rgba="0.282353 0.282353 0.282353 1.0" />
+            </material>
+        </visual>
+        <visual name="link6_visible">
+            <origin xyz="-0.000124 -0.002224 0.054320" rpy="-3.141593 3.141593 0.000001" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link6_visible_vis_3.dae" />
+            </geometry>
+            <material name="link6_visible_material">
+                <color rgba="0.508235 0.761224 0.903529 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="joint6" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="5.2359879308285" velocity="0.69813170079778" lower="-7.3303830332218" effort="600.0" />
+        <parent link="link_5" />
+        <child link="link_6" />
+        <origin xyz="0.000000 -0.057296 0.058404" rpy="-1.570796 3.577925 -3.141592" />
+    </joint>
+    <link name="link_6">
+        <inertial>
+            <origin xyz="0.000151 0.000125 0.015904" rpy="0.000003 3.141545 1.153497" />
+            <inertia ixx="0.0089852207463956" ixy="0.0" ixz="0.0" iyz="0.0" izz="0.01648619954702" iyy="0.0089852207463956" />
+            <mass value="1.1000000238419" />
+        </inertial>
+        <collision name="link">
+            <origin xyz="0.000151 0.000125 0.015904" rpy="0.000003 3.141545 1.153497" />
+            <geometry>
+                <cylinder length="0.023004442453384" radius="0.044264044612646" />
+            </geometry>
+        </collision>
+        <visual name="link7_visible">
+            <origin xyz="0.000151 0.000125 0.019655" rpy="-1.570796 3.141593 -0.523599" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_link7_visible_vis_1.dae" />
+            </geometry>
+            <material name="link7_visible_material">
+                <color rgba="0.870588 0.870588 0.870588 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="connection" type="fixed">
+        <axis xyz="0 0 1" />
+        <parent link="link_6" />
+        <child link="zivid" />
+        <origin xyz="0.000000 -0.000000 0.027400" rpy="-3.141593 3.141593 -2.094395" />
+    </joint>
+    <link name="zivid">
+        <inertial>
+            <origin xyz="0.105676 -0.001575 0.001172" rpy="1.659068 3.141593 -3.106686" />
+            <inertia ixx="0.0046465662374685" ixy="-0.00016278148078362" ixz="-4.6756067176896e-05" iyz="-2.3278980191309e-06" izz="0.0070123610747013" iyy="0.008714279133327" />
+            <mass value="1.5925265683984" />
+        </inertial>
+        <collision name="zivid">
+            <origin xyz="0.101868 -0.002869 0.004072" rpy="0.087266 3.141593 -3.106686" />
+            <geometry>
+                <box size="0.013000 0.070000 0.080000" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.067970 -0.020553 0.017586" rpy="1.570795 4.625123 1.605704" />
+            <geometry>
+                <box size="0.010800 0.020500 0.025990" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.066892 0.010310 0.020288" rpy="1.570795 4.625123 1.605704" />
+            <geometry>
+                <box size="0.010800 0.020500 0.025990" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.066798 0.013010 -0.010594" rpy="1.570795 4.625123 1.605704" />
+            <geometry>
+                <box size="0.010800 0.020500 0.025990" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.067875 -0.017853 -0.013296" rpy="1.570795 4.625123 1.605704" />
+            <geometry>
+                <box size="0.010800 0.020500 0.025990" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.088390 -0.003580 0.003950" rpy="3.054327 3.141593 0.034906" />
+            <geometry>
+                <box size="0.017000 0.055000 0.042000" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.076394 -0.003912 0.002954" rpy="1.483531 3.141593 0.034906" />
+            <geometry>
+                <box size="0.008000 0.021000 0.055000" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.000802 -0.006674 0.004689" rpy="3.058950 3.113528 0.369046" />
+            <geometry>
+                <cylinder length="0.023559490986165" radius="0.060531443031607" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.068510 -0.004118 0.002960" rpy="1.658059 3.141591 -3.106686" />
+            <geometry>
+                <box size="0.017882 0.020000 0.055470" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="-0.031214 -0.064442 -0.002010" rpy="1.614512 3.217139 -2.061141" />
+            <geometry>
+                <box size="0.017882 0.020000 0.055470" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="-0.037616 0.050434 0.008053" rpy="1.614509 3.066044 2.130954" />
+            <geometry>
+                <box size="0.017882 0.020000 0.055470" />
+            </geometry>
+        </collision>
+        <collision name="zivid">
+            <origin xyz="0.137000 -0.000000 -0.000000" rpy="1.659068 3.141593 -3.106686" />
+            <geometry>
+                <box size="0.056500 0.120905 0.169005" />
+            </geometry>
+        </collision>
+        <visual name="Zivid_Two">
+            <origin xyz="0.138378 -0.003639 0.041937" rpy="1.570796 3.054327 1.605703" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_Zivid_Two_vis_1.dae" />
+            </geometry>
+            <material name="Zivid_Two_material">
+                <color rgba="1.000000 1.000000 1.000000 1.0" />
+            </material>
+        </visual>
+        <visual name="support_zivid_fixed_angle_2">
+            <origin xyz="-1.483570 -0.075300 0.199027" rpy="1.570796 3.054327 1.605703" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_support_zivid_fixed_angle_2_vis_1.dae" />
+            </geometry>
+            <material name="support_zivid_fixed_angle_2_material">
+                <color rgba="1.000000 1.000000 1.000000 1.0" />
+            </material>
+        </visual>
+        <visual name="mountv2_1">
+            <origin xyz="0.029349 0.025222 -0.004393" rpy="-0.087266 3.141593 0.034906" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_mountv2_1_vis_1.dae" />
+            </geometry>
+            <material name="mountv2_1_material">
+                <color rgba="1.000000 1.000000 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="connection_2" type="fixed">
+        <axis xyz="0 0 1" />
+        <parent link="zivid" />
+        <child link="ROBOTIQ85" />
+        <origin xyz="0.000156 -0.006872 0.023909" rpy="3.141593 3.141593 -3.106686" />
+    </joint>
+    <link name="ROBOTIQ85">
+        <inertial>
+            <origin xyz="0.000080 0.011354 0.040643" rpy="-3.141593 3.141593 3.141593" />
+            <inertia ixx="0.00024588701243647" ixy="0.0" ixz="0.0" iyz="3.0031821840627e-05" izz="0.0007022251312994" iyy="0.00072521693152666" />
+            <mass value="0.5" />
+        </inertial>
+        <collision name="ROBOTIQ85">
+            <origin xyz="0.000080 0.013004 0.026744" rpy="-1.570796 -1.570796 0.000000" />
+            <geometry>
+                <box size="0.017463 0.050800 0.057938" />
+            </geometry>
+        </collision>
+        <collision name="ROBOTIQ85">
+            <origin xyz="0.000080 -0.001677 0.079775" rpy="0.000000 -1.570796 0.000000" />
+            <geometry>
+                <box size="0.040000 0.020600 0.040000" />
+            </geometry>
+        </collision>
+        <collision name="ROBOTIQ85">
+            <origin xyz="0.000080 0.012928 0.038015" rpy="-3.141593 -1.570796 0.000000" />
+            <geometry>
+                <box size="0.030480 0.051435 0.139700" />
+            </geometry>
+        </collision>
+        <visual name="body">
+            <origin xyz="0.000080 0.013004 0.058894" rpy="-3.141592 3.141593 -3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_body_vis_1.dae" />
+            </geometry>
+            <material name="body_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="body">
+            <origin xyz="0.000080 0.013004 0.058894" rpy="-3.141592 3.141593 -3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_body_vis_2.dae" />
+            </geometry>
+            <material name="body_material">
+                <color rgba="1.000000 1.000000 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="Rjoint1" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="0.28246752802359" velocity="0.69813168048859" lower="-0.50293065722955" effort="1.0" />
+        <parent link="ROBOTIQ85" />
+        <child link="Rfinger" />
+        <origin xyz="0.012818 -0.001677 0.071344" rpy="-1.570796 3.141593 -3.141592" />
+    </joint>
+    <link name="Rfinger">
+        <inertial>
+            <origin xyz="0.006046 0.026979 -0.000005" rpy="1.570974 3.138406 -0.217986" />
+            <inertia ixx="3.4844272621657e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="7.6569405819033e-06" iyy="2.9984947551464e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="Rfinger">
+            <origin xyz="0.006046 0.026979 -0.000005" rpy="1.570974 3.138406 -0.217986" />
+            <geometry>
+                <box size="0.015803 0.033427 0.071444" />
+            </geometry>
+        </collision>
+        <visual name="RfingerVisible">
+            <origin xyz="0.006046 0.026979 -0.000005" rpy="1.570974 3.138406 -0.217986" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RfingerVisible_vis_1.dae" />
+            </geometry>
+            <material name="RfingerVisible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="RfingerVisible">
+            <origin xyz="0.006046 0.026979 -0.000005" rpy="1.570974 3.138406 -0.217986" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RfingerVisible_vis_2.dae" />
+            </geometry>
+            <material name="RfingerVisible_material">
+                <color rgba="0.837524 0.970755 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="Rjoint2" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="Rfinger" />
+        <child link="RfingerTip" />
+        <origin xyz="0.012331 0.055669 0.000000" rpy="-3.141593 3.141593 -2.638662" />
+    </joint>
+    <link name="RfingerTip">
+        <inertial>
+            <origin xyz="0.011132 0.016529 0.000000" rpy="1.570796 3.141593 2.635740" />
+            <inertia ixx="3.0899458815366e-05" ixy="-3.746852446497e-10" ixz="9.351419726628e-06" iyz="1.005439206757e-10" izz="1.0653390399477e-05" iyy="3.3094096875495e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="RfingerTip">
+            <origin xyz="0.010626 0.025619 0.000001" rpy="1.570665 3.141593 2.635715" />
+            <geometry>
+                <box size="0.009509 0.025404 0.036832" />
+            </geometry>
+        </collision>
+        <collision name="RfingerTip">
+            <origin xyz="0.013800 0.017181 0.000001" rpy="-1.570808 3.141594 -0.505877" />
+            <geometry>
+                <box size="0.008509 0.014223 0.025144" />
+            </geometry>
+        </collision>
+        <collision name="RfingerTip">
+            <origin xyz="0.009972 -0.010139 -0.000000" rpy="3.132713 1.570952 -1.038353" />
+            <geometry>
+                <box size="0.011078 0.012672 0.022135" />
+            </geometry>
+        </collision>
+        <visual name="RfingerTipVisible">
+            <origin xyz="0.015090 0.010565 0.000001" rpy="1.570796 3.141593 2.635740" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RfingerTipVisible_vis_1.dae" />
+            </geometry>
+            <material name="RfingerTipVisible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="RfingerTipVisible">
+            <origin xyz="0.015090 0.010565 0.000001" rpy="1.570796 3.141593 2.635740" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RfingerTipVisible_vis_2.dae" />
+            </geometry>
+            <material name="RfingerTipVisible_material">
+                <color rgba="0.305882 0.305882 0.305882 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="RactiveJoint" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="ROBOTIQ85" />
+        <child link="RauxLink1Visible" />
+        <origin xyz="0.030681 -0.001677 0.064685" rpy="-1.570796 3.141593 -3.141592" />
+    </joint>
+    <link name="RauxLink1Visible">
+        <visual name="RauxLink1Visible">
+            <origin xyz="0.014975 -0.001508 0.000001" rpy="-1.570931 3.141677 -1.666745" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RauxLink1Visible_vis_1.dae" />
+            </geometry>
+            <material name="RauxLink1Visible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="RauxLink1Visible">
+            <origin xyz="0.014975 -0.001508 0.000001" rpy="-1.570931 3.141677 -1.666745" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RauxLink1Visible_vis_2.dae" />
+            </geometry>
+            <material name="RauxLink1Visible_material">
+                <color rgba="0.837524 0.970755 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="RauxJoint2" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="RauxLink1Visible" />
+        <child link="RauxLink2Visible" />
+        <origin xyz="0.031497 -0.004000 0.000000" rpy="3.141593 3.141593 -3.133856" />
+    </joint>
+    <link name="RauxLink2Visible">
+        <visual name="RauxLink2Visible">
+            <origin xyz="0.003131 0.023606 0.000000" rpy="-1.570795 3.141585 -0.131810" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RauxLink2Visible_vis_1.dae" />
+            </geometry>
+            <material name="RauxLink2Visible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="RauxLink2Visible">
+            <origin xyz="0.003131 0.023606 0.000000" rpy="-1.570795 3.141585 -0.131810" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_RauxLink2Visible_vis_2.dae" />
+            </geometry>
+            <material name="RauxLink2Visible_material">
+                <color rgba="0.837524 0.970755 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="Ljoint1" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit upper="0.29320930375694" velocity="0.69813168048859" lower="-0.4921888814962" effort="1.0" />
+        <parent link="ROBOTIQ85" />
+        <child link="Lfinger" />
+        <origin xyz="-0.012656 -0.001677 0.071344" rpy="-1.570796 3.141593 0.000000" />
+    </joint>
+    <link name="Lfinger">
+        <inertial>
+            <origin xyz="0.006336 0.026912 -0.000005" rpy="1.570974 3.138406 -0.228728" />
+            <inertia ixx="3.4844272621657e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="7.6569405819033e-06" iyy="2.9984947551464e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="Lfinger">
+            <origin xyz="0.006336 0.026912 -0.000005" rpy="1.570974 3.138406 -0.228728" />
+            <geometry>
+                <box size="0.015803 0.033427 0.071444" />
+            </geometry>
+        </collision>
+        <visual name="LfingerVisible">
+            <origin xyz="0.006336 0.026912 -0.000005" rpy="1.570974 3.138406 -0.228728" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LfingerVisible_vis_1.dae" />
+            </geometry>
+            <material name="LfingerVisible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="LfingerVisible">
+            <origin xyz="0.006336 0.026912 -0.000005" rpy="1.570974 3.138406 -0.228728" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LfingerVisible_vis_2.dae" />
+            </geometry>
+            <material name="LfingerVisible_material">
+                <color rgba="0.837524 0.970755 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="Ljoint2" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="Lfinger" />
+        <child link="LfingerTip" />
+        <origin xyz="0.012928 0.055533 0.000000" rpy="3.141593 3.141593 -2.649404" />
+    </joint>
+    <link name="LfingerTip">
+        <inertial>
+            <origin xyz="0.010869 0.016703 0.000000" rpy="1.570796 3.141593 2.651599" />
+            <inertia ixx="3.0899458815366e-05" ixy="-3.746852446497e-10" ixz="9.351419726628e-06" iyz="1.005439206757e-10" izz="1.0653390399477e-05" iyy="3.3094096875495e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="LfingerTip">
+            <origin xyz="0.010218 0.025784 0.000001" rpy="1.570665 3.141593 2.651574" />
+            <geometry>
+                <box size="0.009509 0.025404 0.036832" />
+            </geometry>
+        </collision>
+        <collision name="LfingerTip">
+            <origin xyz="0.013526 0.017397 0.000001" rpy="-1.570808 3.141594 -0.490018" />
+            <geometry>
+                <box size="0.008509 0.014223 0.025144" />
+            </geometry>
+        </collision>
+        <collision name="LfingerTip">
+            <origin xyz="0.010131 -0.009980 -0.000000" rpy="3.132713 1.570952 -1.022494" />
+            <geometry>
+                <box size="0.011078 0.012672 0.022135" />
+            </geometry>
+        </collision>
+        <visual name="LfingerTipVisible">
+            <origin xyz="0.014920 0.010803 0.000001" rpy="1.570796 3.141593 2.651599" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LfingerTipVisible_vis_1.dae" />
+            </geometry>
+            <material name="LfingerTipVisible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="LfingerTipVisible">
+            <origin xyz="0.014920 0.010803 0.000001" rpy="1.570796 3.141593 2.651599" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LfingerTipVisible_vis_2.dae" />
+            </geometry>
+            <material name="LfingerTipVisible_material">
+                <color rgba="0.305882 0.305882 0.305882 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="rev9" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="LfingerTip" />
+        <child link="dummyMass7" />
+        <origin xyz="0.018241 0.034198 0.000000" rpy="-0.000000 3.141593 -0.489994" />
+    </joint>
+    <link name="dummyMass7">
+        <inertial>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="1.570796 3.141593 -3.140680" />
+            <inertia ixx="1.9999999792781e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="1.9999999792781e-05" iyy="1.9999999792781e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass7">
+            <origin xyz="0.000000 0.000000 0.000000" rpy="1.570796 3.141593 -3.140680" />
+            <geometry>
+                <box size="0.030000 0.030000 0.030000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="active2" type="prismatic">
+        <axis xyz="0 0 1" />
+        <limit upper="0.96998762172506" velocity="0.019999999552965" lower="-0.030012378274945" effort="1000.0" />
+        <parent link="dummyMass7" />
+        <child link="dummyMass8" />
+        <origin xyz="0.050373 0.000046 -0.000000" rpy="1.570796 3.141593 1.571709" />
+    </joint>
+    <link name="dummyMass8">
+        <inertial>
+            <origin xyz="-0.000000 -0.000000 0.000386" rpy="0.000000 -1.570796 0.000000" />
+            <inertia ixx="1.9999999792781e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="1.9999999792781e-05" iyy="1.9999999792781e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass8">
+            <origin xyz="-0.000000 -0.000000 0.000386" rpy="0.000000 -1.570796 0.000000" />
+            <geometry>
+                <box size="0.030000 0.030000 0.030000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="rev11" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="LfingerTip" />
+        <child link="dummyMass9" />
+        <origin xyz="-0.000000 -0.000000 0.000000" rpy="-0.000000 3.141593 -0.489994" />
+    </joint>
+    <link name="dummyMass9">
+        <inertial>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="1.570796 3.141593 -3.140525" />
+            <inertia ixx="1.9999999792781e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="1.9999999792781e-05" iyy="1.9999999792781e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass9">
+            <origin xyz="0.000000 0.000000 0.000000" rpy="1.570796 3.141593 -3.140525" />
+            <geometry>
+                <box size="0.030000 0.030000 0.030000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="active1" type="prismatic">
+        <axis xyz="0 0 1" />
+        <limit upper="0.97000030808359" velocity="0.019999999552965" lower="-0.029999691916414" effort="1000.0" />
+        <parent link="dummyMass9" />
+        <child link="dummyMass10" />
+        <origin xyz="0.050373 0.000054 -0.000000" rpy="1.570796 3.141593 1.571864" />
+    </joint>
+    <link name="dummyMass10">
+        <inertial>
+            <origin xyz="0.000000 -0.000000 0.000373" rpy="0.000000 -1.570796 0.000000" />
+            <inertia ixx="1.9999999792781e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="1.9999999792781e-05" iyy="1.9999999792781e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass10">
+            <origin xyz="0.000000 -0.000000 0.000373" rpy="0.000000 -1.570796 0.000000" />
+            <geometry>
+                <box size="0.030000 0.030000 0.030000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="LactiveJoint" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="ROBOTIQ85" />
+        <child link="LauxLink1Visible" />
+        <origin xyz="-0.030520 -0.001677 0.064685" rpy="-1.570796 3.141593 0.000000" />
+    </joint>
+    <link name="LauxLink1Visible">
+        <visual name="LauxLink1Visible">
+            <origin xyz="0.014967 -0.001586 0.000001" rpy="-1.570931 3.141677 -1.671972" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LauxLink1Visible_vis_1.dae" />
+            </geometry>
+            <material name="LauxLink1Visible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="LauxLink1Visible">
+            <origin xyz="0.014967 -0.001586 0.000001" rpy="-1.570931 3.141677 -1.671972" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LauxLink1Visible_vis_2.dae" />
+            </geometry>
+            <material name="LauxLink1Visible_material">
+                <color rgba="0.837524 0.970755 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="LauxJoint2" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="LauxLink1Visible" />
+        <child link="LauxLink2Visible" />
+        <origin xyz="0.031476 -0.004165 0.000000" rpy="-3.141593 3.141593 -3.139083" />
+    </joint>
+    <link name="LauxLink2Visible">
+        <visual name="LauxLink2Visible">
+            <origin xyz="0.003172 0.023600 0.000000" rpy="-1.570795 3.141585 -0.133564" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LauxLink2Visible_vis_1.dae" />
+            </geometry>
+            <material name="LauxLink2Visible_material">
+                <color rgba="0.282317 0.282389 0.282389 1.0" />
+            </material>
+        </visual>
+        <visual name="LauxLink2Visible">
+            <origin xyz="0.003172 0.023600 0.000000" rpy="-1.570795 3.141585 -0.133564" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/robot/ur10e_LauxLink2Visible_vis_2.dae" />
+            </geometry>
+            <material name="LauxLink2Visible_material">
+                <color rgba="0.837524 0.970755 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="prismatic" type="prismatic">
+        <axis xyz="0 0 1" />
+        <limit upper="0.051606485398152" velocity="10.0" lower="-0.048393516091964" effort="50.0" />
+        <parent link="ROBOTIQ85" />
+        <child link="dummyMass" />
+        <origin xyz="0.000081 -0.001677 0.077934" rpy="-3.141592 3.141593 -3.141593" />
+    </joint>
+    <link name="dummyMass">
+        <inertial>
+            <origin xyz="-0.000000 -0.000000 0.098393" rpy="-3.141593 3.141593 -3.141593" />
+            <inertia ixx="1.9999999792781e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="1.9999999792781e-05" iyy="1.9999999792781e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass">
+            <origin xyz="-0.000000 -0.000000 0.098393" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <box size="0.030000 0.030000 0.030000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="rev" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="dummyMass" />
+        <child link="dummyMass2" />
+        <origin xyz="0.000000 -0.000000 0.093393" rpy="-1.570796 3.141593 3.141593" />
+    </joint>
+    <link name="dummyMass2">
+        <inertial>
+            <origin xyz="0.025372 -0.030923 -0.000000" rpy="1.570796 3.141593 2.257908" />
+            <inertia ixx="1.9638474562249e-06" ixy="0.0" ixz="0.0" iyz="0.0" izz="6.382504232731e-05" iyy="6.382504232731e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass2">
+            <origin xyz="0.025372 -0.030923 -0.000000" rpy="1.570796 3.141593 2.257908" />
+            <geometry>
+                <box size="0.080000 0.010000 0.010000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="rev3" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="dummyMass" />
+        <child link="dummyMass3" />
+        <origin xyz="0.000000 -0.000000 0.093393" rpy="-1.570796 3.141593 3.141593" />
+    </joint>
+    <link name="dummyMass3">
+        <inertial>
+            <origin xyz="-0.025661 -0.030684 -0.000000" rpy="1.570796 3.141593 -2.267270" />
+            <inertia ixx="1.9638474562249e-06" ixy="0.0" ixz="0.0" iyz="0.0" izz="6.382504232731e-05" iyy="6.382504232731e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass3">
+            <origin xyz="-0.025661 -0.030684 -0.000000" rpy="1.570796 3.141593 -2.267270" />
+            <geometry>
+                <box size="0.080000 0.010000 0.010000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="prismatic2" type="prismatic">
+        <axis xyz="0 0 1" />
+        <limit upper="0.033356744459101" velocity="10.0" lower="-0.066643257031015" effort="50.0" />
+        <parent link="ROBOTIQ85" />
+        <child link="dummyMass4" />
+        <origin xyz="0.000081 -0.001677 0.116734" rpy="-3.141592 3.141593 -3.141593" />
+    </joint>
+    <link name="dummyMass4">
+        <inertial>
+            <origin xyz="-0.000000 -0.000000 0.121643" rpy="-3.141593 3.141593 -3.141593" />
+            <inertia ixx="1.9999999792781e-05" ixy="0.0" ixz="0.0" iyz="0.0" izz="1.9999999792781e-05" iyy="1.9999999792781e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass4">
+            <origin xyz="-0.000000 -0.000000 0.121643" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <box size="0.030000 0.030000 0.030000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="rev5" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="dummyMass4" />
+        <child link="dummyMass5" />
+        <origin xyz="0.000000 -0.000000 0.116643" rpy="-1.570796 3.141593 -3.141593" />
+    </joint>
+    <link name="dummyMass5">
+        <inertial>
+            <origin xyz="0.033048 -0.022534 -0.000000" rpy="1.570796 3.141593 2.543145" />
+            <inertia ixx="1.9638474562249e-06" ixy="0.0" ixz="0.0" iyz="0.0" izz="6.382504232731e-05" iyy="6.382504232731e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass5">
+            <origin xyz="0.033048 -0.022534 -0.000000" rpy="1.570796 3.141593 2.543145" />
+            <geometry>
+                <box size="0.080000 0.010000 0.010000" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="rev7" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="dummyMass4" />
+        <child link="dummyMass6" />
+        <origin xyz="0.000000 -0.000000 0.116643" rpy="-1.570796 3.141593 -3.141593" />
+    </joint>
+    <link name="dummyMass6">
+        <inertial>
+            <origin xyz="-0.033182 -0.022337 0.000000" rpy="1.570796 3.141593 -2.549112" />
+            <inertia ixx="1.9638474562249e-06" ixy="0.0" ixz="0.0" iyz="0.0" izz="6.382504232731e-05" iyy="6.382504232731e-05" />
+            <mass value="0.10000000149012" />
+        </inertial>
+        <collision name="dummyMass6">
+            <origin xyz="-0.033182 -0.022337 0.000000" rpy="1.570796 3.141593 -2.549112" />
+            <geometry>
+                <box size="0.080000 0.010000 0.010000" />
+            </geometry>
+        </collision>
+    </link>
+</robot>

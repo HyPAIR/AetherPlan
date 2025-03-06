@@ -1,0 +1,4 @@
+[0.039s] Invoking command in '/home/user/AetherPlan/build/iiwa_description': /usr/bin/cmake /home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/iiwa_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/iiwa_description
+[0.716s] [0mCMake Error: The source directory "/home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/iiwa_description" does not appear to contain CMakeLists.txt.
+[0.716s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.722s] Invoked command in '/home/user/AetherPlan/build/iiwa_description' returned '1': /usr/bin/cmake /home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/iiwa_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/iiwa_description

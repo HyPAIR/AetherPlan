@@ -1,0 +1,1 @@
+Invoking command in '/home/user/AetherPlan/build/fast-downward': /usr/bin/cmake --build /home/user/AetherPlan/build/fast-downward -- -j8 -l8

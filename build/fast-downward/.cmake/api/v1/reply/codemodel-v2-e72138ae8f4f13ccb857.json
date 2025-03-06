@@ -1,0 +1,189 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "h2-preprocessor",
+					"jsonFile" : "directory-h2-preprocessor-Release-e51527f056d8875a21ff.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "h2-preprocessor",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "search",
+					"childIndexes" : 
+					[
+						3
+					],
+					"jsonFile" : "directory-search-Release-a6fd05ccaa1369684523.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "search",
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"build" : "search/ext/boost_dependencies/libs",
+					"jsonFile" : "directory-search.ext.boost_dependencies.libs-Release-025e695e6d3166e82deb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "search/ext/boost_dependencies/libs",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "fast-downward",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "preprocess",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "downward",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "MiniBoost",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "MiniBoost::@903a201f61083b3df596",
+					"jsonFile" : "target-MiniBoost-Release-3ae421f1dd6628263e1e.json",
+					"name" : "MiniBoost",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "downward::@b3e4e3481926c17d0075",
+					"jsonFile" : "target-downward-Release-86707dff3ba429fae538.json",
+					"name" : "downward",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "libcudd::@b3e4e3481926c17d0075",
+					"jsonFile" : "target-libcudd-Release-201577e34ae967735b9c.json",
+					"name" : "libcudd",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "preprocess::@61ef754033a6ed58a78f",
+					"jsonFile" : "target-preprocess-Release-cf762ba24df24fa5fc06.json",
+					"name" : "preprocess",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "translate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-translate-Release-60b0ad1dcbe4b285d6d9.json",
+					"name" : "translate",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/user/AetherPlan/build/fast-downward",
+		"source" : "/home/user/AetherPlan/tampura/third_party/symk/src"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

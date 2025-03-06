@@ -1,0 +1,11 @@
+[35m[1mConsolidate compiler generated dependencies of target MiniBoost[0m
+[  0%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/posix_api.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/instances.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cregex.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wide_posix_api.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/winstances.cpp.o[0m
+gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:300: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/winstances.cpp.o] Interrupt
+gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:104: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cregex.cpp.o] Interrupt
+gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:146: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/instances.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:241: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/all] Interrupt
+gmake: *** [Makefile:91: all] Interrupt

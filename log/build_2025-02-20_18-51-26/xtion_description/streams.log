@@ -1,0 +1,3 @@
+[0.666s] Invoking command in '/home/user/AetherPlan/build/xtion_description': /usr/bin/cmake /home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/xtion_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/xtion_description
+[0.707s] [0mCMake Error: The source directory "/home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/xtion_description" does not appear to contain CMakeLists.txt.
+[0.707s] Specify --help for usage, or press the help button on the CMake GUI.[0m

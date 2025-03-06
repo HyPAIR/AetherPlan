@@ -1,0 +1,1 @@
+Invoking command in '/home/user/AetherPlan/build/xtion_description': /usr/bin/cmake /home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/xtion_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/xtion_description

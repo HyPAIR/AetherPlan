@@ -1,0 +1,3 @@
+[0.661s] Invoking command in '/home/user/AetherPlan/build/wsg_50_description': /usr/bin/cmake /home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/wsg_50_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/wsg_50_description
+[0.706s] [0mCMake Error: The source directory "/home/user/AetherPlan/pddlstream/examples/pybullet/utils/models/drake/wsg_50_description" does not appear to contain CMakeLists.txt.
+[0.707s] Specify --help for usage, or press the help button on the CMake GUI.[0m

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/CMakeFiles/libcudd"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/CMakeFiles/libcudd.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/CMakeFiles/libcudd-complete.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/libcudd-prefix/src/libcudd-stamp/libcudd-build.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/libcudd-prefix/src/libcudd-stamp/libcudd-configure.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/libcudd-prefix/src/libcudd-stamp/libcudd-download.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/libcudd-prefix/src/libcudd-stamp/libcudd-install.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/libcudd-prefix/src/libcudd-stamp/libcudd-mkdir.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/libcudd-prefix/src/libcudd-stamp/libcudd-patch.rule"
+		},
+		{
+			"file" : "/home/user/AetherPlan/build/fast-downward/search/libcudd-prefix/src/libcudd-stamp/libcudd-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"libcudd"
+		],
+		"name" : "libcudd"
+	}
+}

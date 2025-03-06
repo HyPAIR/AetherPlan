@@ -14,7 +14,10 @@ msg/ObjectPoseArray.msg
 resource/simulation
 simulation/__init__.py
 simulation/coppelia_client.py
+simulation/ik_tool.py
+simulation/ik_try.py
 simulation/observer.py
+simulation/plannner.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

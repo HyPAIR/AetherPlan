@@ -1,13 +1,13 @@
 import pybullet as p
 import pybullet_data
 import numpy as np
-
+import time
 # Connect PyBullet in silent mode
 p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
 # Load the robot (KUKA iiwa as an example)
-robot_id = p.loadURDF("misc/ur10_e.urdf", useFixedBase=True)
+robot_id = p.loadURDF("misc/robot/ur10e.urdf", useFixedBase=True)
 
 # Define target position and orientation
 target_pos = [1.39522,0.57788, 1.42524] # XYZ in meters
@@ -45,7 +45,7 @@ for attempt in range(max_attempts):
         found_solution = True
         print("IK Solution:", list(ik_solution[:6]))
         break
-
+    
 if not found_solution:
     print("Could not find an IK solution within the error threshold.")
 while True:

@@ -1,0 +1,405 @@
+[0.000000] (-) TimerEvent: {}
+[0.000680] (fast-downward) JobQueued: {'identifier': 'fast-downward', 'dependencies': OrderedDict()}
+[0.000721] (simulation) JobQueued: {'identifier': 'simulation', 'dependencies': OrderedDict()}
+[0.000766] (fast-downward) JobStarted: {'identifier': 'fast-downward'}
+[0.018544] (simulation) JobStarted: {'identifier': 'simulation'}
+[0.037482] (fast-downward) JobProgress: {'identifier': 'fast-downward', 'progress': 'cmake'}
+[0.040283] (fast-downward) Command: {'cmd': ['/usr/bin/cmake', '/home/user/AetherPlan/tampura/third_party/symk/src', '-DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/fast-downward'], 'cwd': '/home/user/AetherPlan/build/fast-downward', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('USER', 'user'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/user'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/user/AetherPlan/simulation'), ('DESKTOP_SESSION', 'ubuntu'), ('REFINE_PLAN_PATH', '/home/user/refine-plan'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1584'), ('SYSTEMD_EXEC_PID', '1755'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3116'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'user'), ('JOURNAL_STREAM', '8:12790'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'user'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/user/anaconda3/condabin:/opt/ros/humble/bin:/home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/irlab:@/tmp/.ICE-unix/1731,unix/irlab:/tmp/.ICE-unix/1731'), ('INVOCATION_ID', '88699c1b12ad434ca12844b1e937d37f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.WXOE22'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/user/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:c5d44880-6e18-482a-b925-e211fb1a8be2'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/user/AetherPlan/build/fast-downward'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/user/anaconda3/bin/conda'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/user/refine-plan/src:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[0.099499] (-) TimerEvent: {}
+[0.116566] (fast-downward) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at CMakeLists.txt:31 (cmake_minimum_required):\n'}
+[0.117092] (fast-downward) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[0.117400] (fast-downward) StderrLine: {'line': b'  CMake.\n'}
+[0.117612] (fast-downward) StderrLine: {'line': b'\n'}
+[0.117758] (fast-downward) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[0.117902] (fast-downward) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[0.118024] (fast-downward) StderrLine: {'line': b'\n'}
+[0.118138] (fast-downward) StderrLine: {'line': b'\x1b[0m\n'}
+[0.119412] (fast-downward) StdoutLine: {'line': b'-- Defaulting to release build.\n'}
+[0.199690] (-) TimerEvent: {}
+[0.300251] (-) TimerEvent: {}
+[0.382988] (fast-downward) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.400351] (-) TimerEvent: {}
+[0.500675] (-) TimerEvent: {}
+[0.601019] (-) TimerEvent: {}
+[0.616810] (fast-downward) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.664590] (fast-downward) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.701199] (-) TimerEvent: {}
+[0.802053] (-) TimerEvent: {}
+[0.902515] (-) TimerEvent: {}
+[0.942182] (fast-downward) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.981773] (fast-downward) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.990177] (fast-downward) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.992686] (fast-downward) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.002635] (-) TimerEvent: {}
+[1.003876] (fast-downward) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.102795] (-) TimerEvent: {}
+[1.205215] (-) TimerEvent: {}
+[1.299364] (fast-downward) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.305426] (-) TimerEvent: {}
+[1.325644] (fast-downward) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.327560] (fast-downward) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.331856] (fast-downward) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.333457] (fast-downward) StdoutLine: {'line': b'-- Building for 64-bit.\n'}
+[1.341463] (fast-downward) StdoutLine: {'line': b'-- Performing Test CXX14_FOUND\n'}
+[1.405624] (-) TimerEvent: {}
+[1.506611] (-) TimerEvent: {}
+[1.589976] (fast-downward) StdoutLine: {'line': b'-- Performing Test CXX14_FOUND - Success\n'}
+[1.592716] (fast-downward) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at search/CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[1.593235] (fast-downward) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[1.594538] (fast-downward) StderrLine: {'line': b'  CMake.\n'}
+[1.599995] (fast-downward) StderrLine: {'line': b'\n'}
+[1.600275] (fast-downward) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[1.600435] (fast-downward) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[1.600565] (fast-downward) StderrLine: {'line': b'\n'}
+[1.600688] (fast-downward) StderrLine: {'line': b'\x1b[0m\n'}
+[1.606789] (-) TimerEvent: {}
+[1.668785] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin causal_graph because plugin core_sources is enabled and depends on it.\n'}
+[1.669175] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin int_hash_set because plugin core_sources is enabled and depends on it.\n'}
+[1.669320] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin int_packer because plugin core_sources is enabled and depends on it.\n'}
+[1.669445] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin ordered_set because plugin core_sources is enabled and depends on it.\n'}
+[1.669585] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin segmented_vector because plugin core_sources is enabled and depends on it.\n'}
+[1.671609] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin subscriber because plugin core_sources is enabled and depends on it.\n'}
+[1.671887] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin successor_generator because plugin core_sources is enabled and depends on it.\n'}
+[1.672027] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin task_properties because plugin core_sources is enabled and depends on it.\n'}
+[1.672737] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin combining_evaluator because plugin max_evaluator is enabled and depends on it.\n'}
+[1.672966] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin stubborn_sets because plugin stubborn_sets_atom_centric is enabled and depends on it.\n'}
+[1.673113] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin eager_search because plugin plugin_astar is enabled and depends on it.\n'}
+[1.673325] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin search_common because plugin plugin_astar is enabled and depends on it.\n'}
+[1.673454] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin lazy_search because plugin plugin_lazy is enabled and depends on it.\n'}
+[1.675137] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin priority_queues because plugin additive_heuristic is enabled and depends on it.\n'}
+[1.675930] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin relaxation_heuristic because plugin additive_heuristic is enabled and depends on it.\n'}
+[1.680070] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin domain_transition_graph because plugin context_enhanced_additive_heuristic is enabled and depends on it.\n'}
+[1.683114] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin dynamic_bitset because plugin cegar is enabled and depends on it.\n'}
+[1.683359] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin extra_tasks because plugin cegar is enabled and depends on it.\n'}
+[1.683497] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin equivalence_relation because plugin mas_heuristic is enabled and depends on it.\n'}
+[1.683642] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin sccs because plugin mas_heuristic is enabled and depends on it.\n'}
+[1.683800] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin variable_order_finder because plugin mas_heuristic is enabled and depends on it.\n'}
+[1.684093] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin lp_solver because plugin landmarks is enabled and depends on it.\n'}
+[1.684248] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin max_cliques because plugin pdbs is enabled and depends on it.\n'}
+[1.684493] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin sampling because plugin pdbs is enabled and depends on it.\n'}
+[1.684676] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin null_pruning_method because plugin eager_search is enabled and depends on it.\n'}
+[1.684998] (fast-downward) StdoutLine: {'line': b'-- Enabling plugin named_vector because plugin lp_solver is enabled and depends on it.\n'}
+[1.686117] (fast-downward) StdoutLine: {'line': b'-- Using plugin: core_sources\n'}
+[1.686375] (fast-downward) StdoutLine: {'line': b'-- Using plugin: options\n'}
+[1.686597] (fast-downward) StdoutLine: {'line': b'-- Using plugin: utils\n'}
+[1.686928] (fast-downward) StdoutLine: {'line': b'-- Using plugin: alternation_open_list\n'}
+[1.687103] (fast-downward) StdoutLine: {'line': b'-- Using plugin: best_first_open_list\n'}
+[1.687334] (fast-downward) StdoutLine: {'line': b'-- Using plugin: epsilon_greedy_open_list\n'}
+[1.687493] (fast-downward) StdoutLine: {'line': b'-- Using plugin: pareto_open_list\n'}
+[1.687715] (fast-downward) StdoutLine: {'line': b'-- Using plugin: tiebreaking_open_list\n'}
+[1.687947] (fast-downward) StdoutLine: {'line': b'-- Using plugin: type_based_open_list\n'}
+[1.688075] (fast-downward) StdoutLine: {'line': b'-- Using plugin: dynamic_bitset\n'}
+[1.688200] (fast-downward) StdoutLine: {'line': b'-- Using plugin: named_vector\n'}
+[1.688326] (fast-downward) StdoutLine: {'line': b'-- Using plugin: equivalence_relation\n'}
+[1.688453] (fast-downward) StdoutLine: {'line': b'-- Using plugin: int_hash_set\n'}
+[1.688607] (fast-downward) StdoutLine: {'line': b'-- Using plugin: int_packer\n'}
+[1.688821] (fast-downward) StdoutLine: {'line': b'-- Using plugin: max_cliques\n'}
+[1.689045] (fast-downward) StdoutLine: {'line': b'-- Using plugin: priority_queues\n'}
+[1.689381] (fast-downward) StdoutLine: {'line': b'-- Using plugin: ordered_set\n'}
+[1.689679] (fast-downward) StdoutLine: {'line': b'-- Using plugin: segmented_vector\n'}
+[1.690033] (fast-downward) StdoutLine: {'line': b'-- Using plugin: subscriber\n'}
+[1.690336] (fast-downward) StdoutLine: {'line': b'-- Using plugin: evaluators_plugin_group\n'}
+[1.690610] (fast-downward) StdoutLine: {'line': b'-- Using plugin: const_evaluator\n'}
+[1.690947] (fast-downward) StdoutLine: {'line': b'-- Using plugin: g_evaluator\n'}
+[1.691212] (fast-downward) StdoutLine: {'line': b'-- Using plugin: combining_evaluator\n'}
+[1.691481] (fast-downward) StdoutLine: {'line': b'-- Using plugin: max_evaluator\n'}
+[1.691676] (fast-downward) StdoutLine: {'line': b'-- Using plugin: pref_evaluator\n'}
+[1.691868] (fast-downward) StdoutLine: {'line': b'-- Using plugin: weighted_evaluator\n'}
+[1.692016] (fast-downward) StdoutLine: {'line': b'-- Using plugin: sum_evaluator\n'}
+[1.692151] (fast-downward) StdoutLine: {'line': b'-- Using plugin: null_pruning_method\n'}
+[1.692308] (fast-downward) StdoutLine: {'line': b'-- Using plugin: limited_pruning\n'}
+[1.692526] (fast-downward) StdoutLine: {'line': b'-- Using plugin: stubborn_sets\n'}
+[1.693298] (fast-downward) StdoutLine: {'line': b'-- Using plugin: stubborn_sets_atom_centric\n'}
+[1.693919] (fast-downward) StdoutLine: {'line': b'-- Using plugin: stubborn_sets_simple\n'}
+[1.694383] (fast-downward) StdoutLine: {'line': b'-- Using plugin: stubborn_sets_ec\n'}
+[1.694738] (fast-downward) StdoutLine: {'line': b'-- Using plugin: search_common\n'}
+[1.695205] (fast-downward) StdoutLine: {'line': b'-- Using plugin: eager_search\n'}
+[1.696542] (fast-downward) StdoutLine: {'line': b'-- Using plugin: plugin_astar\n'}
+[1.698457] (fast-downward) StdoutLine: {'line': b'-- Using plugin: plugin_eager\n'}
+[1.700264] (fast-downward) StdoutLine: {'line': b'-- Using plugin: plugin_eager_greedy\n'}
+[1.701240] (fast-downward) StdoutLine: {'line': b'-- Using plugin: plugin_eager_wastar\n'}
+[1.701661] (fast-downward) StdoutLine: {'line': b'-- Using plugin: plugin_lazy\n'}
+[1.701878] (fast-downward) StdoutLine: {'line': b'-- Using plugin: plugin_lazy_greedy\n'}
+[1.702044] (fast-downward) StdoutLine: {'line': b'-- Using plugin: plugin_lazy_wastar\n'}
+[1.702202] (fast-downward) StdoutLine: {'line': b'-- Using plugin: enforced_hill_climbing_search\n'}
+[1.702346] (fast-downward) StdoutLine: {'line': b'-- Using plugin: iterated_search\n'}
+[1.702516] (fast-downward) StdoutLine: {'line': b'-- Using plugin: lazy_search\n'}
+[1.702687] (fast-downward) StdoutLine: {'line': b'-- Using plugin: lp_solver\n'}
+[1.702910] (fast-downward) StdoutLine: {'line': b'-- Using plugin: relaxation_heuristic\n'}
+[1.703089] (fast-downward) StdoutLine: {'line': b'-- Using plugin: additive_heuristic\n'}
+[1.703220] (fast-downward) StdoutLine: {'line': b'-- Using plugin: blind_search_heuristic\n'}
+[1.703349] (fast-downward) StdoutLine: {'line': b'-- Using plugin: context_enhanced_additive_heuristic\n'}
+[1.703492] (fast-downward) StdoutLine: {'line': b'-- Using plugin: cg_heuristic\n'}
+[1.703624] (fast-downward) StdoutLine: {'line': b'-- Using plugin: domain_transition_graph\n'}
+[1.703760] (fast-downward) StdoutLine: {'line': b'-- Using plugin: ff_heuristic\n'}
+[1.703901] (fast-downward) StdoutLine: {'line': b'-- Using plugin: goal_count_heuristic\n'}
+[1.704029] (fast-downward) StdoutLine: {'line': b'-- Using plugin: hm_heuristic\n'}
+[1.704155] (fast-downward) StdoutLine: {'line': b'-- Using plugin: landmark_cut_heuristic\n'}
+[1.704282] (fast-downward) StdoutLine: {'line': b'-- Using plugin: max_heuristic\n'}
+[1.704422] (fast-downward) StdoutLine: {'line': b'-- Using plugin: core_tasks\n'}
+[1.704545] (fast-downward) StdoutLine: {'line': b'-- Using plugin: extra_tasks\n'}
+[1.704670] (fast-downward) StdoutLine: {'line': b'-- Using plugin: causal_graph\n'}
+[1.704864] (fast-downward) StdoutLine: {'line': b'-- Using plugin: sampling\n'}
+[1.705099] (fast-downward) StdoutLine: {'line': b'-- Using plugin: successor_generator\n'}
+[1.705458] (fast-downward) StdoutLine: {'line': b'-- Using plugin: task_properties\n'}
+[1.705733] (fast-downward) StdoutLine: {'line': b'-- Using plugin: variable_order_finder\n'}
+[1.706164] (fast-downward) StdoutLine: {'line': b'-- Using plugin: cegar\n'}
+[1.706470] (fast-downward) StdoutLine: {'line': b'-- Using plugin: mas_heuristic\n'}
+[1.706745] (-) TimerEvent: {}
+[1.707324] (fast-downward) StdoutLine: {'line': b'-- Using plugin: landmarks\n'}
+[1.707769] (fast-downward) StdoutLine: {'line': b'-- Using plugin: operator_counting\n'}
+[1.707995] (fast-downward) StdoutLine: {'line': b'-- Using plugin: pdbs\n'}
+[1.708146] (fast-downward) StdoutLine: {'line': b'-- Using plugin: potentials\n'}
+[1.708294] (fast-downward) StdoutLine: {'line': b'-- Using plugin: sccs\n'}
+[1.708580] (fast-downward) StdoutLine: {'line': b'-- Using plugin: sdac\n'}
+[1.709527] (fast-downward) StdoutLine: {'line': b'-- Using plugin: symbolic\n'}
+[1.807000] (-) TimerEvent: {}
+[1.812902] (fast-downward) StdoutLine: {'line': b'-- Could NOT find OSI (missing: OSI_INCLUDE_DIRS OSI_LIBRARIES) \n'}
+[1.824411] (fast-downward) StdoutLine: {'line': b'-- Building MiniBoost.\n'}
+[1.831231] (fast-downward) StdoutLine: {'line': b'-- Building Cudd with 64-bit.\n'}
+[1.865652] (fast-downward) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.907202] (-) TimerEvent: {}
+[2.009740] (-) TimerEvent: {}
+[2.031612] (fast-downward) StdoutLine: {'line': b'-- Generating done\n'}
+[2.058873] (fast-downward) StdoutLine: {'line': b'-- Build files have been written to: /home/user/AetherPlan/build/fast-downward\n'}
+[2.098986] (fast-downward) CommandEnded: {'returncode': 0}
+[2.101912] (fast-downward) JobProgress: {'identifier': 'fast-downward', 'progress': 'build'}
+[2.103532] (fast-downward) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/user/AetherPlan/build/fast-downward', '--', '-j8', '-l8'], 'cwd': '/home/user/AetherPlan/build/fast-downward', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('USER', 'user'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/user'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/user/AetherPlan/simulation'), ('DESKTOP_SESSION', 'ubuntu'), ('REFINE_PLAN_PATH', '/home/user/refine-plan'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1584'), ('SYSTEMD_EXEC_PID', '1755'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3116'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'user'), ('JOURNAL_STREAM', '8:12790'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'user'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/user/anaconda3/condabin:/opt/ros/humble/bin:/home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/irlab:@/tmp/.ICE-unix/1731,unix/irlab:/tmp/.ICE-unix/1731'), ('INVOCATION_ID', '88699c1b12ad434ca12844b1e937d37f'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.WXOE22'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/user/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:c5d44880-6e18-482a-b925-e211fb1a8be2'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/user/AetherPlan/build/fast-downward'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/user/anaconda3/bin/conda'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/user/refine-plan/src:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800')]), 'shell': False}
+[2.111179] (-) TimerEvent: {}
+[2.212863] (-) TimerEvent: {}
+[2.314904] (-) TimerEvent: {}
+[2.359985] (fast-downward) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/c_regex_traits.cpp.o\x1b[0m\n'}
+[2.368972] (fast-downward) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/instances.cpp.o\x1b[0m\n'}
+[2.369273] (fast-downward) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cpp_regex_traits.cpp.o\x1b[0m\n'}
+[2.369988] (fast-downward) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/fileiter.cpp.o\x1b[0m\n'}
+[2.370409] (fast-downward) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/icu.cpp.o\x1b[0m\n'}
+[2.372943] (fast-downward) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cregex.cpp.o\x1b[0m\n'}
+[2.379160] (fast-downward) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex.cpp.o\x1b[0m\n'}
+[2.386895] (fast-downward) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/posix_api.cpp.o\x1b[0m\n'}
+[2.425896] (-) TimerEvent: {}
+[2.526709] (-) TimerEvent: {}
+[2.631229] (-) TimerEvent: {}
+[2.738031] (-) TimerEvent: {}
+[2.839843] (-) TimerEvent: {}
+[2.953149] (-) TimerEvent: {}
+[3.068109] (-) TimerEvent: {}
+[3.177885] (-) TimerEvent: {}
+[3.198180] (fast-downward) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex_debug.cpp.o\x1b[0m\n'}
+[3.278205] (-) TimerEvent: {}
+[3.386297] (-) TimerEvent: {}
+[3.489275] (-) TimerEvent: {}
+[3.599272] (-) TimerEvent: {}
+[3.709599] (-) TimerEvent: {}
+[3.814271] (-) TimerEvent: {}
+[3.916757] (-) TimerEvent: {}
+[3.987838] (fast-downward) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex_raw_buffer.cpp.o\x1b[0m\n'}
+[4.016857] (-) TimerEvent: {}
+[4.117599] (-) TimerEvent: {}
+[4.150136] (simulation) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/simulation', 'build', '--build-base', '/home/user/AetherPlan/build/simulation/build', 'install', '--record', '/home/user/AetherPlan/build/simulation/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/user/AetherPlan/simulation/src/simulation', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_GB:en', 'USER': 'user', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'HOME': '/home/user', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/user/AetherPlan/simulation', 'DESKTOP_SESSION': 'ubuntu', 'REFINE_PLAN_PATH': '/home/user/refine-plan', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1584', 'SYSTEMD_EXEC_PID': '1755', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '3116', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'user', 'JOURNAL_STREAM': '8:12790', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'user', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo/../../share/gazebo-11/models:', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/home/user/anaconda3/condabin:/opt/ros/humble/bin:/home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/irlab:@/tmp/.ICE-unix/1731,unix/irlab:/tmp/.ICE-unix/1731', 'INVOCATION_ID': '88699c1b12ad434ca12844b1e937d37f', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WXOE22', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '30', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/user/anaconda3/bin/python', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:c5d44880-6e18-482a-b925-e211fb1a8be2', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo/../../share/gazebo-11:', 'GJS_DEBUG_OUTPUT': 'stderr', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/user/AetherPlan/build/simulation', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/user/anaconda3/bin/conda', 'GAZEBO_PLUGIN_PATH': '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/user/AetherPlan/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/AetherPlan/install/simulation/lib/python3.10/site-packages:/home/user/refine-plan/src:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[4.224086] (-) TimerEvent: {}
+[4.325144] (-) TimerEvent: {}
+[4.426303] (-) TimerEvent: {}
+[4.532646] (-) TimerEvent: {}
+[4.638086] (-) TimerEvent: {}
+[4.739313] (-) TimerEvent: {}
+[4.850961] (-) TimerEvent: {}
+[4.957102] (-) TimerEvent: {}
+[5.065405] (-) TimerEvent: {}
+[5.166576] (-) TimerEvent: {}
+[5.271669] (-) TimerEvent: {}
+[5.372597] (-) TimerEvent: {}
+[5.477064] (-) TimerEvent: {}
+[5.577912] (-) TimerEvent: {}
+[5.680231] (-) TimerEvent: {}
+[5.781257] (-) TimerEvent: {}
+[5.883165] (-) TimerEvent: {}
+[5.987184] (-) TimerEvent: {}
+[6.089309] (-) TimerEvent: {}
+[6.193691] (-) TimerEvent: {}
+[6.294231] (-) TimerEvent: {}
+[6.397243] (-) TimerEvent: {}
+[6.497706] (-) TimerEvent: {}
+[6.598632] (-) TimerEvent: {}
+[6.643034] (fast-downward) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex_traits_defaults.cpp.o\x1b[0m\n'}
+[6.698646] (-) TimerEvent: {}
+[6.804246] (-) TimerEvent: {}
+[6.921513] (-) TimerEvent: {}
+[7.023209] (-) TimerEvent: {}
+[7.131127] (-) TimerEvent: {}
+[7.240517] (-) TimerEvent: {}
+[7.341430] (-) TimerEvent: {}
+[7.454829] (-) TimerEvent: {}
+[7.557835] (-) TimerEvent: {}
+[7.658287] (-) TimerEvent: {}
+[7.758898] (-) TimerEvent: {}
+[7.861342] (-) TimerEvent: {}
+[7.962006] (-) TimerEvent: {}
+[8.062651] (-) TimerEvent: {}
+[8.114467] (simulation) StdoutLine: {'line': b'running egg_info\n'}
+[8.118864] (simulation) StdoutLine: {'line': b'creating ../../../build/simulation/simulation.egg-info\n'}
+[8.122183] (simulation) StdoutLine: {'line': b'writing ../../../build/simulation/simulation.egg-info/PKG-INFO\n'}
+[8.122596] (simulation) StdoutLine: {'line': b'writing dependency_links to ../../../build/simulation/simulation.egg-info/dependency_links.txt\n'}
+[8.124598] (simulation) StdoutLine: {'line': b'writing entry points to ../../../build/simulation/simulation.egg-info/entry_points.txt\n'}
+[8.125084] (simulation) StdoutLine: {'line': b'writing requirements to ../../../build/simulation/simulation.egg-info/requires.txt\n'}
+[8.127681] (simulation) StdoutLine: {'line': b'writing top-level names to ../../../build/simulation/simulation.egg-info/top_level.txt\n'}
+[8.130043] (simulation) StdoutLine: {'line': b"writing manifest file '../../../build/simulation/simulation.egg-info/SOURCES.txt'\n"}
+[8.153976] (simulation) StdoutLine: {'line': b"reading manifest file '../../../build/simulation/simulation.egg-info/SOURCES.txt'\n"}
+[8.154375] (simulation) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[8.156950] (simulation) StdoutLine: {'line': b"writing manifest file '../../../build/simulation/simulation.egg-info/SOURCES.txt'\n"}
+[8.157588] (simulation) StdoutLine: {'line': b'running build\n'}
+[8.157912] (simulation) StdoutLine: {'line': b'running build_py\n'}
+[8.158671] (simulation) StdoutLine: {'line': b'creating /home/user/AetherPlan/build/simulation/build\n'}
+[8.159082] (simulation) StdoutLine: {'line': b'creating /home/user/AetherPlan/build/simulation/build/lib\n'}
+[8.160416] (simulation) StdoutLine: {'line': b'creating /home/user/AetherPlan/build/simulation/build/lib/simulation\n'}
+[8.161316] (simulation) StdoutLine: {'line': b'copying simulation/ik_tool.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation\n'}
+[8.166063] (-) TimerEvent: {}
+[8.166515] (simulation) StdoutLine: {'line': b'copying simulation/coppelia_client.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation\n'}
+[8.167235] (simulation) StdoutLine: {'line': b'copying simulation/ik_try.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation\n'}
+[8.171180] (simulation) StdoutLine: {'line': b'copying simulation/observer.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation\n'}
+[8.171979] (simulation) StdoutLine: {'line': b'copying simulation/__init__.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation\n'}
+[8.172948] (simulation) StdoutLine: {'line': b'running install\n'}
+[8.178822] (fast-downward) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/static_mutex.cpp.o\x1b[0m\n'}
+[8.185945] (simulation) StdoutLine: {'line': b'running install_lib\n'}
+[8.208316] (simulation) StdoutLine: {'line': b'creating /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation\n'}
+[8.208683] (simulation) StdoutLine: {'line': b'copying /home/user/AetherPlan/build/simulation/build/lib/simulation/ik_tool.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation\n'}
+[8.214203] (simulation) StdoutLine: {'line': b'copying /home/user/AetherPlan/build/simulation/build/lib/simulation/coppelia_client.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation\n'}
+[8.217271] (simulation) StdoutLine: {'line': b'copying /home/user/AetherPlan/build/simulation/build/lib/simulation/ik_try.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation\n'}
+[8.217681] (simulation) StdoutLine: {'line': b'copying /home/user/AetherPlan/build/simulation/build/lib/simulation/observer.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation\n'}
+[8.225834] (simulation) StdoutLine: {'line': b'copying /home/user/AetherPlan/build/simulation/build/lib/simulation/__init__.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation\n'}
+[8.227540] (simulation) StdoutLine: {'line': b'byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/ik_tool.py to ik_tool.cpython-310.pyc\n'}
+[8.242224] (simulation) StdoutLine: {'line': b'byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/coppelia_client.py to coppelia_client.cpython-310.pyc\n'}
+[8.252390] (simulation) StdoutLine: {'line': b'byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/ik_try.py to ik_try.cpython-310.pyc\n'}
+[8.256347] (simulation) StdoutLine: {'line': b'byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/observer.py to observer.cpython-310.pyc\n'}
+[8.266272] (-) TimerEvent: {}
+[8.267252] (simulation) StdoutLine: {'line': b'byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/__init__.py to __init__.cpython-310.pyc\n'}
+[8.278060] (simulation) StdoutLine: {'line': b'running install_data\n'}
+[8.282439] (simulation) StdoutLine: {'line': b'creating /home/user/AetherPlan/install/simulation/share/ament_index\n'}
+[8.283011] (simulation) StdoutLine: {'line': b'creating /home/user/AetherPlan/install/simulation/share/ament_index/resource_index\n'}
+[8.283287] (simulation) StdoutLine: {'line': b'creating /home/user/AetherPlan/install/simulation/share/ament_index/resource_index/packages\n'}
+[8.283497] (simulation) StdoutLine: {'line': b'copying resource/simulation -> /home/user/AetherPlan/install/simulation/share/ament_index/resource_index/packages\n'}
+[8.290793] (simulation) StdoutLine: {'line': b'copying package.xml -> /home/user/AetherPlan/install/simulation/share/simulation\n'}
+[8.291192] (simulation) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.329039] (simulation) StdoutLine: {'line': b'Copying ../../../build/simulation/simulation.egg-info to /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation-0.0.0-py3.10.egg-info\n'}
+[8.347105] (simulation) StdoutLine: {'line': b'running install_scripts\n'}
+[8.366374] (-) TimerEvent: {}
+[8.472270] (-) TimerEvent: {}
+[8.587464] (-) TimerEvent: {}
+[8.699937] (-) TimerEvent: {}
+[8.706788] (simulation) StdoutLine: {'line': b'Installing coppelia_client script to /home/user/AetherPlan/install/simulation/lib/simulation\n'}
+[8.718302] (simulation) StdoutLine: {'line': b'Installing observer script to /home/user/AetherPlan/install/simulation/lib/simulation\n'}
+[8.729904] (simulation) StdoutLine: {'line': b"writing list of installed files to '/home/user/AetherPlan/build/simulation/install.log'\n"}
+[8.801247] (-) TimerEvent: {}
+[8.907310] (-) TimerEvent: {}
+[8.991881] (fast-downward) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/usinstances.cpp.o\x1b[0m\n'}
+[9.007541] (-) TimerEvent: {}
+[9.108612] (-) TimerEvent: {}
+[9.212361] (-) TimerEvent: {}
+[9.223368] (simulation) CommandEnded: {'returncode': 0}
+[9.313250] (-) TimerEvent: {}
+[9.409400] (simulation) JobEnded: {'identifier': 'simulation', 'rc': 0}
+[9.415011] (-) TimerEvent: {}
+[9.515523] (-) TimerEvent: {}
+[9.615986] (-) TimerEvent: {}
+[9.717285] (-) TimerEvent: {}
+[9.814453] (fast-downward) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/w32_regex_traits.cpp.o\x1b[0m\n'}
+[9.817623] (-) TimerEvent: {}
+[9.924949] (-) TimerEvent: {}
+[10.025868] (-) TimerEvent: {}
+[10.134332] (-) TimerEvent: {}
+[10.246976] (-) TimerEvent: {}
+[10.347608] (-) TimerEvent: {}
+[10.448612] (-) TimerEvent: {}
+[10.552435] (-) TimerEvent: {}
+[10.658162] (-) TimerEvent: {}
+[10.759553] (-) TimerEvent: {}
+[10.866333] (-) TimerEvent: {}
+[10.968731] (fast-downward) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wc_regex_traits.cpp.o\x1b[0m\n'}
+[10.970216] (-) TimerEvent: {}
+[11.089670] (-) TimerEvent: {}
+[11.212421] (-) TimerEvent: {}
+[11.324737] (-) TimerEvent: {}
+[11.433836] (-) TimerEvent: {}
+[11.529577] (fast-downward) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wide_posix_api.cpp.o\x1b[0m\n'}
+[11.537079] (-) TimerEvent: {}
+[11.571310] (fast-downward) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/winstances.cpp.o\x1b[0m\n'}
+[11.637324] (-) TimerEvent: {}
+[11.741141] (-) TimerEvent: {}
+[11.843395] (-) TimerEvent: {}
+[11.947335] (-) TimerEvent: {}
+[12.048285] (-) TimerEvent: {}
+[12.153109] (-) TimerEvent: {}
+[12.262455] (-) TimerEvent: {}
+[12.367916] (-) TimerEvent: {}
+[12.472865] (-) TimerEvent: {}
+[12.573506] (-) TimerEvent: {}
+[12.674155] (-) TimerEvent: {}
+[12.780026] (-) TimerEvent: {}
+[12.880956] (-) TimerEvent: {}
+[12.986912] (-) TimerEvent: {}
+[13.088242] (-) TimerEvent: {}
+[13.198136] (-) TimerEvent: {}
+[13.299707] (-) TimerEvent: {}
+[13.409354] (-) TimerEvent: {}
+[13.514225] (-) TimerEvent: {}
+[13.617207] (-) TimerEvent: {}
+[13.722922] (-) TimerEvent: {}
+[13.825827] (-) TimerEvent: {}
+[13.935260] (-) TimerEvent: {}
+[14.037941] (-) TimerEvent: {}
+[14.148808] (-) TimerEvent: {}
+[14.251367] (-) TimerEvent: {}
+[14.357477] (-) TimerEvent: {}
+[14.466776] (-) TimerEvent: {}
+[14.569278] (-) TimerEvent: {}
+[14.675352] (-) TimerEvent: {}
+[14.781234] (-) TimerEvent: {}
+[14.882431] (-) TimerEvent: {}
+[14.988168] (-) TimerEvent: {}
+[15.088949] (-) TimerEvent: {}
+[15.197843] (-) TimerEvent: {}
+[15.302120] (-) TimerEvent: {}
+[15.403371] (-) TimerEvent: {}
+[15.506211] (-) TimerEvent: {}
+[15.624109] (-) TimerEvent: {}
+[15.724560] (-) TimerEvent: {}
+[15.825659] (-) TimerEvent: {}
+[15.929949] (-) TimerEvent: {}
+[16.033877] (-) TimerEvent: {}
+[16.137823] (-) TimerEvent: {}
+[16.238516] (-) TimerEvent: {}
+[16.339035] (-) TimerEvent: {}
+[16.442156] (-) TimerEvent: {}
+[16.543310] (-) TimerEvent: {}
+[16.644257] (-) TimerEvent: {}
+[16.748243] (-) TimerEvent: {}
+[16.849133] (-) TimerEvent: {}
+[16.953847] (-) TimerEvent: {}
+[17.061371] (-) TimerEvent: {}
+[17.165522] (-) TimerEvent: {}
+[17.272347] (-) TimerEvent: {}
+[17.373498] (-) TimerEvent: {}
+[17.474513] (-) TimerEvent: {}
+[17.580895] (-) TimerEvent: {}
+[17.689942] (-) TimerEvent: {}
+[17.790864] (-) TimerEvent: {}
+[17.903343] (-) TimerEvent: {}
+[18.009868] (-) TimerEvent: {}
+[18.117472] (-) TimerEvent: {}
+[18.222525] (-) TimerEvent: {}
+[18.326457] (-) TimerEvent: {}
+[18.429534] (-) TimerEvent: {}
+[18.534530] (-) TimerEvent: {}
+[18.636206] (-) TimerEvent: {}
+[18.739854] (-) TimerEvent: {}
+[18.840709] (-) TimerEvent: {}
+[18.903609] (fast-downward) StderrLine: {'line': b'gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:146: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/instances.cpp.o] Interrupt\n'}
+[18.904344] (fast-downward) StderrLine: {'line': b'gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:104: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cregex.cpp.o] Interrupt\n'}
+[18.904501] (fast-downward) StderrLine: {'line': b'gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:160: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/posix_api.cpp.o] Interrupt\n'}
+[18.904621] (fast-downward) StderrLine: {'line': b'gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:286: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wide_posix_api.cpp.o] Interrupt\n'}
+[18.904743] (fast-downward) StderrLine: {'line': b'gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:300: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/winstances.cpp.o] Interrupt\n'}
+[18.904877] (fast-downward) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:241: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/all] Interrupt\n'}
+[18.904997] (fast-downward) StderrLine: {'line': b'gmake: *** [Makefile:91: all] Interrupt\n'}
+[18.941733] (-) TimerEvent: {}
+[18.960906] (fast-downward) CommandEnded: {'returncode': -2}
+[18.966496] (fast-downward) JobEnded: {'identifier': 'fast-downward', 'rc': 'SIGINT'}
+[18.977157] (-) EventReactorShutdown: {}

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot name="rectangular_block">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="1 1 0.5"/>  <!-- Length, Width, Height -->
+            </geometry>
+            <material name="gray">
+                <color rgba="1 0.6 0.0 0.8"/>
+            </material>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <box size="1 1 0.5"/>
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="1.0"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+</robot>

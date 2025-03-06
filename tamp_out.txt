@@ -1,0 +1,638 @@
+Arguments: Namespace(algorithm='adaptive', unit=False, problem='packed', number=5, cfree=False, deterministic=False, optimal=False, max_time=120, teleport=False, enable=True, simulate=False)
+Width: 0.27
+Using pybullet for inverse kinematics
+Init: [('CanMove',), ('BConf', q848), ('AtBConf', q848), ('=', ('PickCost',), 1), ('=', ('PlaceCost',), 1), ('Arm', 'left'), ('AConf', 'left', q976), ('HandEmpty', 'left'), ('AtAConf', 'left', q976), ('Controllable', 'left'), ('Arm', 'right'), ('AConf', 'right', q680), ('HandEmpty', 'right'), ('AtAConf', 'right', q680), ('Graspable', 4), ('Pose', 4, p0), ('AtPose', 4, p0), ('Stackable', 4, None), ('Supported', 4, p0, 2), ('Graspable', 5), ('Pose', 5, p1), ('AtPose', 5, p1), ('Stackable', 5, None), ('Supported', 5, p1, 2), ('Graspable', 6), ('Pose', 6, p2), ('AtPose', 6, p2), ('Stackable', 6, None), ('Supported', 6, p2, 2), ('Graspable', 7), ('Pose', 7, p3), ('AtPose', 7, p3), ('Stackable', 7, None), ('Supported', 7, p3, 2), ('Graspable', 8), ('Pose', 8, p4), ('AtPose', 8, p4), ('Stackable', 8, None), ('Supported', 8, p4, 2), ('Stackable', 4, 3), ('Stackable', 5, 3), ('Stackable', 6, 3), ('Stackable', 7, 3), ('Stackable', 8, 3)]
+Goal: ('and', ('On', 4, 3), ('On', 5, 3), ('On', 6, 3), ('On', 7, 3), ('On', 8, 3))
+Streams: {Distance, inverse-kinematics, plan-base-motion, sample-grasp, sample-pose, test-cfree-approach-pose, test-cfree-pose-pose, test-cfree-traj-pose}
+Warning! Undeclared predicates: ['bconf', 'controllable', 'graspable']
+Setting negate=True for stream [test-cfree-traj-pose]
+Setting negate=True for stream [test-cfree-approach-pose]
+Setting negate=True for stream [test-cfree-pose-pose]
+Streams: [sample-pose:('?o', '?r')->('?p',), sample-grasp:('?o',)->('?g',), inverse-kinematics:('?a', '?o', '?p', '?g')->('?q', '?t'), plan-base-motion:('?q1', '?q2')->('?t',)]
+Functions: [distance(?q1, ?q2)=?float]
+Negated: [test-cfree-pose-pose:('?o1', '?p1', '?o2', '?p2')->(), test-cfree-approach-pose:('?o1', '?p1', '?g1', '?o2', '?p2')->(), test-cfree-traj-pose:('?t', '?o2', '?p2')->()]
+Optimizers: []
+iter=inf, outs=1) distance(q848, q848)=1.000
+Eager Calls: 1 | Successes: 1 | Results: 1 | Counts: {distance: 1}
+
+Iteration: 1 | Complexity: 0 | Skeletons: 0 | Skeleton Queue: 0 | Disabled: 0 | Evaluations: 45 | Eager Calls: 1 | Cost: inf | Search Time: 0.004 | Sample Time: 0.001 | Total Time: 0.005
+Attempt: 1 | Results: 0 | Depth: 0 | Success: False | Time: 0.043
+Stream plan (inf, 0, inf): None
+Action plan (inf, inf): None
+No plan: increasing complexity from 0 to 1
+Eager Calls: 0 | Successes: 0 | Results: 0 | Counts: {}
+
+Iteration: 2 | Complexity: 1 | Skeletons: 0 | Skeleton Queue: 0 | Disabled: 0 | Evaluations: 45 | Eager Calls: 1 | Cost: inf | Search Time: 0.049 | Sample Time: 0.001 | Total Time: 0.050
+Attempt: 1 | Results: 16 | Depth: 0 | Success: False | Time: 0.044
+Stream plan (inf, 0, inf): None
+Action plan (inf, inf): None
+No plan: increasing complexity from 1 to 2
+Eager Calls: 0 | Successes: 0 | Results: 0 | Counts: {}
+
+Iteration: 3 | Complexity: 2 | Skeletons: 0 | Skeleton Queue: 0 | Disabled: 0 | Evaluations: 45 | Eager Calls: 1 | Cost: inf | Search Time: 0.094 | Sample Time: 0.001 | Total Time: 0.095
+Attempt: 1 | Results: 29 | Depth: 0 | Success: False | Time: 0.202
+Stream plan (inf, 0, inf): None
+Action plan (inf, inf): None
+No plan: increasing complexity from 2 to 3
+Eager Calls: 0 | Successes: 0 | Results: 0 | Counts: {}
+
+Iteration: 4 | Complexity: 3 | Skeletons: 0 | Skeleton Queue: 0 | Disabled: 0 | Evaluations: 45 | Eager Calls: 1 | Cost: inf | Search Time: 0.298 | Sample Time: 0.001 | Total Time: 0.299
+Attempt: 1 | Results: 32 | Depth: 1 | Success: False | Time: 0.737
+Attempt: 2 | Results: 317 | Depth: 1 | Success: False | Time: 1.757
+Attempt: 3 | Results: 317 | Depth: 0 | Success: True | Time: 2.853
+Stream plan (145, 145, 40.000): [sample-pose:(5, 3)->(#p0), test-cfree-pose-pose:(5, #p0, 4, p0)->(), sample-pose:(4, 3)->(#p1), test-cfree-pose-pose:(4, #p1, 7, p3)->(), sample-pose:(8, 3)->(#p3), test-cfree-pose-pose:(8, #p3, 7, p3)->(), test-cfree-pose-pose:(8, #p3, 6, p2)->(), test-cfree-pose-pose:(5, #p0, 6, p2)->(), sample-pose:(7, 3)->(#p2), test-cfree-pose-pose:(7, #p2, 6, p2)->(), test-cfree-pose-pose:(8, #p3, 5, p1)->(), test-cfree-pose-pose:(8, #p3, 4, p0)->(), test-cfree-pose-pose:(5, #p0, 7, p3)->(), test-cfree-pose-pose:(4, #p1, 6, p2)->(), test-cfree-pose-pose:(4, #p1, 8, #p3)->(), sample-pose:(6, 3)->(#p4), test-cfree-pose-pose:(6, #p4, 7, #p2)->(), test-cfree-pose-pose:(7, #p2, 4, #p1)->(), test-cfree-pose-pose:(6, #p4, 8, #p3)->(), test-cfree-pose-pose:(7, #p2, 8, #p3)->(), test-cfree-pose-pose:(4, #p1, 5, #p0)->(), test-cfree-pose-pose:(5, #p0, 8, #p3)->(), test-cfree-pose-pose:(6, #p4, 4, #p1)->(), test-cfree-pose-pose:(7, #p2, 5, #p0)->(), test-cfree-pose-pose:(6, #p4, 5, #p0)->(), sample-grasp:(4)->(#g4), test-cfree-approach-pose:(4, p0, #g4, 7, p3)->(), sample-grasp:(5)->(#g2), test-cfree-approach-pose:(5, p1, #g2, 6, p2)->(), test-cfree-approach-pose:(5, p1, #g2, 7, p3)->(), sample-grasp:(8)->(#g0), test-cfree-approach-pose:(8, p4, #g0, 6, p2)->(), test-cfree-approach-pose:(8, p4, #g0, 5, p1)->(), test-cfree-approach-pose:(5, p1, #g2, 4, p0)->(), sample-grasp:(7)->(#g3), test-cfree-approach-pose:(7, p3, #g3, 6, p2)->(), test-cfree-approach-pose:(4, p0, #g4, 6, p2)->(), test-cfree-approach-pose:(8, p4, #g0, 4, p0)->(), test-cfree-approach-pose:(8, p4, #g0, 7, p3)->(), test-cfree-approach-pose:(5, #p0, #g2, 6, p2)->(), test-cfree-approach-pose:(4, p0, #g4, 8, #p3)->(), sample-grasp:(6)->(#g1), test-cfree-approach-pose:(6, p2, #g1, 8, #p3)->(), test-cfree-approach-pose:(8, #p3, #g0, 5, p1)->(), test-cfree-approach-pose:(8, #p3, #g0, 4, p0)->(), test-cfree-approach-pose:(8, #p3, #g0, 7, p3)->(), test-cfree-approach-pose:(6, p2, #g1, 4, #p1)->(), test-cfree-approach-pose:(5, #p0, #g2, 7, p3)->(), test-cfree-approach-pose:(5, p1, #g2, 8, #p3)->(), test-cfree-approach-pose:(6, p2, #g1, 5, #p0)->(), test-cfree-approach-pose:(5, #p0, #g2, 4, p0)->(), test-cfree-approach-pose:(7, p3, #g3, 8, #p3)->(), test-cfree-approach-pose:(7, p3, #g3, 4, #p1)->(), test-cfree-approach-pose:(7, p3, #g3, 5, #p0)->(), test-cfree-approach-pose:(4, p0, #g4, 5, #p0)->(), test-cfree-approach-pose:(4, #p1, #g4, 7, p3)->(), test-cfree-approach-pose:(8, #p3, #g0, 6, p2)->(), test-cfree-approach-pose:(4, #p1, #g4, 6, p2)->(), test-cfree-approach-pose:(6, p2, #g1, 7, #p2)->(), test-cfree-approach-pose:(7, #p2, #g3, 6, p2)->(), test-cfree-approach-pose:(4, #p1, #g4, 8, #p3)->(), test-cfree-approach-pose:(6, #p4, #g1, 8, #p3)->(), test-cfree-approach-pose:(6, #p4, #g1, 7, #p2)->(), test-cfree-approach-pose:(4, #p1, #g4, 5, #p0)->(), test-cfree-approach-pose:(5, #p0, #g2, 8, #p3)->(), test-cfree-approach-pose:(6, #p4, #g1, 4, #p1)->(), test-cfree-approach-pose:(7, #p2, #g3, 8, #p3)->(), test-cfree-approach-pose:(6, #p4, #g1, 5, #p0)->(), test-cfree-approach-pose:(7, #p2, #g3, 4, #p1)->(), test-cfree-approach-pose:(7, #p2, #g3, 5, #p0)->(), inverse-kinematics:(left, 8, p4, #g0)->(#q0, #t0), test-cfree-traj-pose:(#t0, 5, p1)->(), distance(q848, #q0)=1.000, inverse-kinematics:(left, 8, #p3, #g0)->(#q9, #t14), test-cfree-traj-pose:(#t14, 5, p1)->(), distance(#q0, #q9)=1.000, inverse-kinematics:(left, 4, #p1, #g4)->(#q5, #t10), test-cfree-traj-pose:(#t10, 7, p3)->(), test-cfree-traj-pose:(#t0, 7, p3)->(), inverse-kinematics:(left, 5, p1, #g2)->(#q6, #t11), test-cfree-traj-pose:(#t11, 7, p3)->(), test-cfree-traj-pose:(#t14, 4, p0)->(), distance(#q9, #q6)=1.000, inverse-kinematics:(left, 5, #p0, #g2)->(#q2, #t2), test-cfree-traj-pose:(#t2, 7, p3)->(), distance(#q6, #q2)=1.000, inverse-kinematics:(left, 4, p0, #g4)->(#q8, #t13), test-cfree-traj-pose:(#t13, 7, p3)->(), test-cfree-traj-pose:(#t14, 6, p2)->(), test-cfree-traj-pose:(#t13, 6, p2)->(), distance(#q2, #q8)=1.000, distance(#q8, #q5)=1.000, inverse-kinematics:(left, 7, p3, #g3)->(#q4, #t4), test-cfree-traj-pose:(#t4, 6, p2)->(), test-cfree-traj-pose:(#t4, 7, p3)->(), test-cfree-traj-pose:(#t0, 4, p0)->(), test-cfree-traj-pose:(#t0, 6, p2)->(), test-cfree-traj-pose:(#t11, 6, p2)->(), test-cfree-traj-pose:(#t14, 7, p3)->(), distance(#q5, #q4)=1.000, inverse-kinematics:(left, 7, #p2, #g3)->(#q3, #t3), test-cfree-traj-pose:(#t3, 6, p2)->(), test-cfree-traj-pose:(#t2, 4, p0)->(), distance(#q4, #q3)=1.000, inverse-kinematics:(left, 6, p2, #g1)->(#q1, #t1), test-cfree-traj-pose:(#t1, 6, p2)->(), test-cfree-traj-pose:(#t0, 8, p4)->(), test-cfree-traj-pose:(#t2, 6, p2)->(), test-cfree-traj-pose:(#t13, 4, p0)->(), test-cfree-traj-pose:(#t11, 5, p1)->(), test-cfree-traj-pose:(#t11, 4, p0)->(), test-cfree-traj-pose:(#t10, 6, p2)->(), distance(#q3, #q1)=1.000, inverse-kinematics:(left, 6, #p4, #g1)->(#q7, #t12), test-cfree-traj-pose:(#t12, 4, #p1)->(), test-cfree-traj-pose:(#t12, 5, #p0)->(), test-cfree-traj-pose:(#t3, 5, #p0)->(), test-cfree-traj-pose:(#t12, 7, #p2)->(), test-cfree-traj-pose:(#t4, 4, #p1)->(), test-cfree-traj-pose:(#t1, 8, #p3)->(), test-cfree-traj-pose:(#t1, 5, #p0)->(), test-cfree-traj-pose:(#t11, 8, #p3)->(), test-cfree-traj-pose:(#t12, 8, #p3)->(), test-cfree-traj-pose:(#t13, 8, #p3)->(), test-cfree-traj-pose:(#t4, 5, #p0)->(), test-cfree-traj-pose:(#t10, 8, #p3)->(), test-cfree-traj-pose:(#t3, 4, #p1)->(), test-cfree-traj-pose:(#t2, 8, #p3)->(), test-cfree-traj-pose:(#t1, 4, #p1)->(), test-cfree-traj-pose:(#t3, 8, #p3)->(), test-cfree-traj-pose:(#t13, 5, #p0)->(), test-cfree-traj-pose:(#t1, 7, #p2)->(), test-cfree-traj-pose:(#t4, 8, #p3)->(), test-cfree-traj-pose:(#t10, 5, #p0)->(), distance(#q1, #q7)=1.000, plan-base-motion:(q848, #q0)->(#t5), plan-base-motion:(#q0, #q9)->(#t21), plan-base-motion:(#q3, #q1)->(#t20), plan-base-motion:(#q9, #q6)->(#t17), plan-base-motion:(#q2, #q8)->(#t15), plan-base-motion:(#q8, #q5)->(#t16), plan-base-motion:(#q4, #q3)->(#t19), plan-base-motion:(#q5, #q4)->(#t23), plan-base-motion:(#q6, #q2)->(#t22), plan-base-motion:(#q1, #q7)->(#t18)]
+Action plan (20, 20.000): [move_base(q848, #q0, #t5), pick(left, 8, p4, #g0, #q0, #t0), move_base(#q0, #q9, #t21), place(left, 8, #p3, #g0, #q9, #t14), move_base(#q9, #q6, #t17), pick(left, 5, p1, #g2, #q6, #t11), move_base(#q6, #q2, #t22), place(left, 5, #p0, #g2, #q2, #t2), move_base(#q2, #q8, #t15), pick(left, 4, p0, #g4, #q8, #t13), move_base(#q8, #q5, #t16), place(left, 4, #p1, #g4, #q5, #t10), move_base(#q5, #q4, #t23), pick(left, 7, p3, #g3, #q4, #t4), move_base(#q4, #q3, #t19), place(left, 7, #p2, #g3, #q3, #t3), move_base(#q3, #q1, #t20), pick(left, 6, p2, #g1, #q1, #t1), move_base(#q1, #q7, #t18), place(left, 6, #p4, #g1, #q7, #t12)]
+iter=0, outs=1) sample-pose:(5, 3)->[(p5)]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p5, 4, p0)->[()]
+iter=0, outs=1) sample-pose:(4, 3)->[(p6)]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p6, 7, p3)->[()]
+iter=0, outs=1) sample-pose:(8, 3)->[(p7)]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p7, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p7, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p5, 6, p2)->[()]
+iter=0, outs=1) sample-pose:(7, 3)->[(p8)]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p7, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p7, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p5, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p6, 6, p2)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p6, 8, p7)->[]
+Sampling for up to 24.751 seconds
+iter=1, outs=1) sample-pose:(8, 3)->[(p9)]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p9, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p9, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p9, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p9, 4, p0)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p6, 8, p9)->[]
+iter=1, outs=1) sample-pose:(4, 3)->[(p10)]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 8, p7)->[()]
+iter=0, outs=1) sample-pose:(6, 3)->[(p11)]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 7, p8)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 4, p10)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p11, 8, p7)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 8, p9)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 8, p9)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 8, p9)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p10, 5, p5)->[]
+iter=1, outs=1) sample-pose:(6, 3)->[(p12)]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p12, 7, p8)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p12, 8, p7)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p8, 8, p7)->[]
+iter=1, outs=1) sample-pose:(7, 3)->[(p13)]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 7, p13)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p13, 4, p10)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 7, p13)->[]
+iter=1, outs=1) sample-pose:(5, 3)->[(p14)]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p14, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p14, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p14, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 5, p14)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(5, p14, 8, p9)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p12, 8, p9)->[()]
+iter=2, outs=1) sample-pose:(6, 3)->[(p15)]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p15, 7, p13)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p15, 7, p8)->[]
+iter=2, outs=1) sample-pose:(7, 3)->[(p16)]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p16, 6, p2)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p11, 7, p16)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 7, p16)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p15, 7, p16)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p16, 4, p10)->[]
+iter=2, outs=1) sample-pose:(8, 3)->[(p17)]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p17, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p17, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p17, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p17, 4, p0)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p10, 8, p17)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p6, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 4, p6)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 8, p17)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p6, 5, p14)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 8, p17)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p13, 4, p6)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p16, 4, p6)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p6, 5, p5)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p5, 8, p17)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p11, 4, p6)->[]
+iter=2, outs=1) sample-pose:(4, 3)->[(p18)]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 4, p18)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p13, 4, p18)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p16, 4, p18)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p18, 8, p9)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 8, p17)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p18, 5, p14)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 5, p5)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 4, p18)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p8, 5, p5)->[]
+iter=2, outs=1) sample-pose:(5, 3)->[(p19)]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p19, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p19, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p19, 7, p3)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p6, 5, p19)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 5, p19)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(5, p19, 8, p17)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p10, 5, p19)->[]
+iter=3, outs=1) sample-pose:(6, 3)->[(p20)]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 7, p13)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 7, p8)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p20, 8, p17)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 7, p16)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 8, p9)->[()]
+iter=3, outs=1) sample-pose:(7, 3)->[(p21)]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p21, 6, p2)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p11, 7, p21)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 7, p21)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p15, 7, p21)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 7, p21)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p21, 4, p10)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p21, 4, p6)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p21, 4, p18)->[]
+iter=3, outs=1) sample-pose:(8, 3)->[(p22)]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p22, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p22, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p22, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p22, 4, p0)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p10, 8, p22)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p6, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p5, 8, p22)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 8, p22)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p20, 8, p22)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 8, p22)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(5, p19, 8, p22)->[]
+iter=3, outs=1) sample-pose:(4, 3)->[(p23)]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 4, p23)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p13, 4, p23)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p16, 4, p23)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p21, 4, p23)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p23, 8, p9)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 5, p19)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 5, p5)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 4, p23)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p23, 5, p14)->[]
+iter=3, outs=1) sample-pose:(5, 3)->[(p24)]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p24, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p24, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p24, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p6, 5, p24)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p24, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p24, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 5, p24)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p24, 8, p9)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p11, 4, p10)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 4, p10)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p20, 4, p10)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 5, p24)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p8, 5, p24)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 5, p24)->[()]
+iter=4, outs=1) sample-pose:(6, 3)->[(p25)]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 7, p13)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 7, p16)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 7, p21)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p25, 7, p8)->[]
+iter=4, outs=1) sample-pose:(7, 3)->[(p26)]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 7, p26)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 4, p10)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 8, p9)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p12, 7, p26)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p15, 7, p26)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 7, p26)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 7, p26)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 8, p9)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 4, p23)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 5, p24)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p11, 5, p24)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 4, p23)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p25, 5, p24)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 4, p18)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 4, p6)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 4, p6)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 4, p18)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p19, 8, p7)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 4, p18)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 4, p18)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 5, p19)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p20, 5, p19)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p25, 8, p7)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 5, p5)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p11, 5, p5)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p25, 5, p5)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 4, p10)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(5, p24, 8, p7)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p14, 8, p7)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(5, p5, 8, p7)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 4, p23)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 4, p23)->[()]
+iter=4, outs=1) sample-pose:(8, 3)->[(p27)]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p27, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p27, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p27, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(8, p27, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 8, p27)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 8, p27)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p8, 8, p27)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p12, 8, p27)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 8, p27)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p26, 8, p27)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 8, p27)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p18, 8, p27)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 8, p27)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p6, 8, p27)->[]
+iter=4, outs=1) sample-pose:(4, 3)->[(p28)]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p8, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p15, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 5, p24)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p16, 4, p28)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p21, 4, p28)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p26, 4, p28)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p28, 8, p9)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p11, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 8, p17)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 5, p24)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p15, 8, p17)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p15, 4, p28)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p25, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p15, 8, p22)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p28, 8, p27)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(4, p28, 5, p14)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 5, p5)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 5, p5)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 5, p19)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 4, p28)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p13, 5, p19)->[]
+iter=inf, outs=0) test-cfree-pose-pose:(6, p12, 4, p28)->[]
+iter=4, outs=1) sample-pose:(5, 3)->[(p29)]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p29, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p29, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p29, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p6, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p29, 8, p17)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p26, 5, p29)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p29, 8, p22)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p10, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p29, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(5, p29, 8, p9)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p18, 5, p29)->[()]
+iter=inf, outs=0) test-cfree-pose-pose:(7, p8, 5, p29)->[]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p23, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p28, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(7, p13, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(6, p20, 5, p29)->[()]
+iter=inf, outs=2) sample-grasp:(4)->[(g104), (g672)]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g104, 7, p3)->[()]
+iter=inf, outs=2) sample-grasp:(5)->[(g640), (g512)]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g640, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g640, 7, p3)->[()]
+iter=inf, outs=2) sample-grasp:(8)->[(g16), (g144)]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g16, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g16, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g640, 4, p0)->[()]
+iter=inf, outs=2) sample-grasp:(7)->[(g184), (g312)]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g184, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g104, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g16, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g16, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p29, g640, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g104, 8, p7)->[()]
+iter=inf, outs=2) sample-grasp:(6)->[(g320), (g192)]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g320, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g16, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g16, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g16, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g320, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p29, g640, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g640, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g320, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p29, g640, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g184, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g184, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g184, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g104, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p28, g104, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g16, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p28, g104, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g320, 7, p13)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p13, g184, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p28, g104, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p20, g320, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p20, g320, 7, p13)->[()]
+iter=inf, outs=0) test-cfree-approach-pose:(4, p28, g104, 5, p29)->[]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g192, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g192, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g192, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p2, g192, 7, p13)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p20, g192, 8, p7)->[()]
+iter=inf, outs=0) test-cfree-approach-pose:(6, p20, g192, 7, p13)->[]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g312, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g312, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g312, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p3, g312, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p13, g312, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g144, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g144, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g144, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p4, g144, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g144, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g144, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g144, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(8, p7, g144, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g512, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g512, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g512, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p29, g512, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p29, g512, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p1, g512, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p29, g512, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g672, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g672, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g672, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g672, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p28, g672, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p28, g672, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p28, g672, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p28, g672, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(5, p29, g640, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p20, g320, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p13, g184, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(6, p20, g320, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p13, g184, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(7, p13, g184, 5, p29)->[()]
+Solutions (1): [(44, np.float64(9.56))] | Time: 0.068
+IK attempts: 1
+iter=0, outs=1) inverse-kinematics:(left, 8, p4, g16)->[(q376, c648)]
+iter=inf, outs=1) test-cfree-traj-pose:(c648, 5, p1)->[()]
+iter=inf, outs=1) distance(q848, q376)=2.916
+Solutions (1): [(39, np.float64(8.276))] | Time: 0.056
+IK attempts: 4
+iter=0, outs=1) inverse-kinematics:(left, 8, p7, g16)->[(q584, c664)]
+iter=inf, outs=1) test-cfree-traj-pose:(c664, 5, p1)->[()]
+iter=inf, outs=1) distance(q376, q584)=3.056
+Solutions (1): [(49, np.float64(10.614))] | Time: 0.078
+IK attempts: 3
+iter=0, outs=1) inverse-kinematics:(left, 4, p28, g672)->[(q704, c128)]
+iter=inf, outs=1) test-cfree-traj-pose:(c128, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c648, 7, p3)->[()]
+Solutions (1): [(61, np.float64(13.295))] | Time: 0.109
+IK attempts: 6
+iter=0, outs=1) inverse-kinematics:(left, 5, p1, g640)->[(q616, c872)]
+iter=inf, outs=1) test-cfree-traj-pose:(c872, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c664, 4, p0)->[()]
+iter=inf, outs=1) distance(q584, q616)=7.944
+Solutions (1): [(60, np.float64(13.131))] | Time: 0.102
+IK attempts: 1
+iter=0, outs=1) inverse-kinematics:(left, 5, p29, g640)->[(q192, c64)]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 7, p3)->[()]
+iter=inf, outs=1) distance(q616, q192)=3.716
+Solutions (1): [(29, np.float64(6.045))] | Time: 0.055
+IK attempts: 1
+iter=0, outs=1) inverse-kinematics:(left, 4, p0, g672)->[(q504, c32)]
+iter=inf, outs=1) test-cfree-traj-pose:(c32, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c664, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c32, 6, p2)->[()]
+iter=inf, outs=1) distance(q192, q504)=7.249
+iter=inf, outs=1) distance(q504, q704)=7.350
+Solutions (1): [(49, np.float64(10.67))] | Time: 0.135
+IK attempts: 1
+iter=0, outs=1) inverse-kinematics:(left, 7, p3, g184)->[(q144, c64)]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 7, p3)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c648, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c648, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c872, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c664, 7, p3)->[()]
+iter=inf, outs=1) distance(q704, q144)=5.720
+Solutions (1): [(39, np.float64(8.424))] | Time: 0.071
+IK attempts: 6
+iter=0, outs=1) inverse-kinematics:(left, 7, p13, g184)->[(q336, c928)]
+iter=inf, outs=1) test-cfree-traj-pose:(c928, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 4, p0)->[()]
+iter=inf, outs=1) distance(q144, q336)=5.332
+Solutions (1): [(30, np.float64(6.426))] | Time: 0.058
+IK attempts: 2
+iter=0, outs=1) inverse-kinematics:(left, 6, p2, g320)->[(q224, c752)]
+iter=inf, outs=1) test-cfree-traj-pose:(c752, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c648, 8, p4)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 6, p2)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c32, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c872, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c872, 4, p0)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c128, 6, p2)->[()]
+iter=inf, outs=1) distance(q336, q224)=2.773
+Solutions (1): [(63, np.float64(13.668))] | Time: 0.138
+IK attempts: 5
+iter=0, outs=1) inverse-kinematics:(left, 6, p20, g320)->[(q200, c808)]
+iter=inf, outs=1) test-cfree-traj-pose:(c808, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c808, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c928, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c808, 7, p13)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c752, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c752, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c872, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c808, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c32, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c128, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c928, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c752, 4, p28)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c928, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c32, 5, p29)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c752, 7, p13)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c64, 8, p7)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c128, 5, p29)->[()]
+iter=inf, outs=1) distance(q224, q200)=2.626
+Solutions (1): [(32, np.float64(1.099))] | Time: 0.134
+iter=inf, outs=1) plan-base-motion:(q848, q376)->[(c392)]
+Solutions (1): [(28, np.float64(0.554))] | Time: 0.132
+iter=inf, outs=1) plan-base-motion:(q376, q584)->[(c296)]
+Solutions (1): [(29, np.float64(0.943))] | Time: 0.139
+iter=inf, outs=1) plan-base-motion:(q336, q224)->[(c352)]
+Solutions (1): [(142, np.float64(3.797))] | Time: 8.340
+iter=inf, outs=1) plan-base-motion:(q584, q616)->[(c992)]
+Solutions (1): [(385, np.float64(7.873))] | Time: 20.909
+iter=inf, outs=1) plan-base-motion:(q192, q504)->[(c160)]
+Solutions (1): [(109, np.float64(2.202))] | Time: 5.011
+iter=inf, outs=1) plan-base-motion:(q504, q704)->[(c216)]
+Solutions (1): [(67, np.float64(2.247))] | Time: 0.306
+iter=inf, outs=1) plan-base-motion:(q144, q336)->[(c672)]
+Solutions (1): [(64, np.float64(1.557))] | Time: 0.271
+iter=inf, outs=1) plan-base-motion:(q704, q144)->[(c424)]
+Solutions (1): [(43, np.float64(1.43))] | Time: 0.154
+iter=inf, outs=1) plan-base-motion:(q616, q192)->[(c664)]
+Solutions (1): [(45, np.float64(1.942))] | Time: 5.729
+iter=inf, outs=1) plan-base-motion:(q224, q200)->[(c152)]
+Summary: {complexity: 3, cost: 58.681, evaluations: 522, iterations: 4, length: 2, run_time: 82.236, sample_time: 65.422, search_time: 16.815, skeletons: 1, solutions: 1, solved: True, timeout: False}
+
+Total External Statistics
+External: sample-pose | n: 180 | p_success: 1.000 | overhead: 0.001
+External: sample-grasp | n: 25 | p_success: 1.000 | overhead: 0.024
+External: inverse-kinematics | n: 84 | p_success: 0.965 | overhead: 0.879
+External: plan-base-motion | n: 30 | p_success: 1.000 | overhead: 3.216
+External: test-cfree-pose-pose | n: 3370 | p_success: 0.611 | overhead: 0.000
+External: test-cfree-approach-pose | n: 1130 | p_success: 0.926 | overhead: 0.004
+External: test-cfree-traj-pose | n: 357 | p_success: 0.992 | overhead: 0.025
+External: distance | n: 401 | p_success: 1.000 | overhead: 0.000
+Wrote: statistics/py3/pr2-tamp.pkl
+         25720822 function calls (25552601 primitive calls) in 81.216 seconds
+
+   Ordered by: internal time
+   List reduced from 1822 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  1302876   11.004    0.000   11.004    0.000 {built-in method pybullet.getClosestPoints}
+       22   10.053    0.457   10.053    0.457 {built-in method pybullet.createMultiBody}
+       22    8.370    0.380    8.370    0.380 {built-in method pybullet.removeBody}
+    46172    6.460    0.000    6.460    0.000 {built-in method pybullet.resetJointState}
+        1    5.130    5.130    8.913    8.913 /home/user/AetherPlan/pddlstream/pddlstream/algorithms/reorder.py:104(dynamic_programming)
+  1302876    2.656    0.000   14.065    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3555(get_closest_points)
+  1295360    2.355    0.000   16.368    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3579(pairwise_link_collision)
+   670176    1.888    0.000    5.295    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3728(<genexpr>)
+   154880    1.871    0.000   14.647    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3764(fn)
+    23549    1.734    0.000   18.102    0.001 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3582(any_link_pair_collision)
+   659296    1.651    0.000    1.651    0.000 {built-in method pybullet.getJointInfo}
+  1189023    1.267    0.000    1.267    0.000 {built-in method numpy.array}
+   659296    1.222    0.000    3.694    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:2021(get_joint_info)
+  2999025    1.193    0.000    1.193    0.000 /home/user/AetherPlan/pddlstream/pddlstream/algorithms/reorder.py:252(<lambda>)
+   166894    0.911    0.000    2.835    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:1782(circular_difference)
+   318306    0.886    0.000    0.886    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:1752(wrap_interval)
+   187301    0.852    0.000    1.919    0.000 /home/user/AetherPlan/pddlstream/pddlstream/algorithms/skeleton.py:88(compute_index_complexity)
+   165907    0.833    0.000    6.128    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3727(fn)
+   151341    0.742    0.000    5.992    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:2225(<listcomp>)
+   456857    0.712    0.000    5.250    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:2218(wrap_position)
+  1381362    0.670    0.000    0.670    0.000 {built-in method __new__ of type object at 0x866f00}
+   151341    0.664    0.000    6.760    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:2223(wrap_positions)
+   469634    0.662    0.000    3.470    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:2149(is_circular)
+   166924    0.545    0.000    0.786    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3228(get_aabb_extent)
+   318306    0.542    0.000    0.936    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:1776(circular_interval)
+
+
+Plan: 0 | Cost: 58.681 | Time: 82.236
+
+Solved: True
+Cost: 58.681
+Length: 20
+Deferred: 0
+Evaluations: 2
+ 1) move_base q848 q376 c392
+ 2) pick left 8 p4 g16 q376 c648
+ 3) move_base q376 q584 c296
+ 4) place left 8 p7 g16 q584 c664
+ 5) move_base q584 q616 c992
+ 6) pick left 5 p1 g640 q616 c872
+ 7) move_base q616 q192 c664
+ 8) place left 5 p29 g640 q192 c64
+ 9) move_base q192 q504 c160
+10) pick left 4 p0 g672 q504 c32
+11) move_base q504 q704 c216
+12) place left 4 p28 g672 q704 c128
+13) move_base q704 q144 c424
+14) pick left 7 p3 g184 q144 c64
+15) move_base q144 q336 c672
+16) place left 7 p13 g184 q336 c928
+17) move_base q336 q224 c352
+18) pick left 6 p2 g320 q224 c752
+19) move_base q224 q200 c152
+20) place left 6 p20 g320 q200 c808
+0 move_base (q848, q376, c392) (t(3,32),)
+1 pick ('left', 8, p4, g16, q376, c648) [t(7,58), GripperCommand(pr2,left,(np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276))), Attach(pr2,left,body8), t(7,58)]
+2 move_base (q376, q584, c296) (t(3,28),)
+3 place ('left', 8, p7, g16, q584, c664) [t(7,54), Detach(pr2,left,body8), GripperCommand(pr2,left,0.548), t(7,54)]
+4 move_base (q584, q616, c992) (t(3,142),)
+5 pick ('left', 5, p1, g640, q616, c872) [t(7,74), GripperCommand(pr2,left,(np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276))), Attach(pr2,left,body5), t(7,74)]
+6 move_base (q616, q192, c664) (t(3,43),)
+7 place ('left', 5, p29, g640, q192, c64) [t(7,73), Detach(pr2,left,body5), GripperCommand(pr2,left,0.548), t(7,73)]
+8 move_base (q192, q504, c160) (t(3,385),)
+9 pick ('left', 4, p0, g672, q504, c32) [t(7,42), GripperCommand(pr2,left,(np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276))), Attach(pr2,left,body4), t(7,42)]
+10 move_base (q504, q704, c216) (t(3,109),)
+11 place ('left', 4, p28, g672, q704, c128) [t(7,62), Detach(pr2,left,body4), GripperCommand(pr2,left,0.548), t(7,62)]
+12 move_base (q704, q144, c424) (t(3,64),)
+13 pick ('left', 7, p3, g184, q144, c64) [t(7,63), GripperCommand(pr2,left,(np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276))), Attach(pr2,left,body7), t(7,63)]
+14 move_base (q144, q336, c672) (t(3,67),)
+15 place ('left', 7, p13, g184, q336, c928) [t(7,52), Detach(pr2,left,body7), GripperCommand(pr2,left,0.548), t(7,52)]
+16 move_base (q336, q224, c352) (t(3,29),)
+17 pick ('left', 6, p2, g320, q224, c752) [t(7,47), GripperCommand(pr2,left,(np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276))), Attach(pr2,left,body6), t(7,47)]
+18 move_base (q224, q200, c152) (t(3,45),)
+19 place ('left', 6, p20, g320, q200, c808) [t(7,76), Detach(pr2,left,body6), GripperCommand(pr2,left,0.548), t(7,76)]
+Press enter to continueers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: r_gripper_tool_frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: l_gripper_led_frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: l_gripper_tool_frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: l_forearm_cam_optical_frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: r_forearm_cam_optical_frame
+ven = Intel
+Workaround for some crash in the Intel OpenGL driver on Linux/Ubuntu
+ven = Intel
+Workaround for some crash in the Intel OpenGL driver on Linux/Ubuntu
+0 t(3,32)
+1 t(7,58)
+2 GripperCommand(pr2,left,(np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276), np.float64(0.4298039215686276)))
+numActiveThreads = 0
+stopping threads
+Thread with taskId 0 exiting
+Thread TERMINATED
+destroy semaphore
+semaphore destroyed
+destroy main semaphore
+main semaphore destroyed
+finished
+numActiveThreads = 0
+btShutDownExampleBrowser stopping threads
+Thread with taskId 0 exiting
+Thread TERMINATED
+destroy semaphore
+semaphore destroyed
+destroy main semaphore
+main semaphore destroyed

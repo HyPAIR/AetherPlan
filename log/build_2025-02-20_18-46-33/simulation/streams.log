@@ -1,0 +1,48 @@
+[4.132s] Invoking command in '/home/user/AetherPlan/simulation/src/simulation': PYTHONPATH=/home/user/AetherPlan/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/AetherPlan/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/simulation build --build-base /home/user/AetherPlan/build/simulation/build install --record /home/user/AetherPlan/build/simulation/install.log --single-version-externally-managed install_data
+[8.097s] running egg_info
+[8.100s] creating ../../../build/simulation/simulation.egg-info
+[8.103s] writing ../../../build/simulation/simulation.egg-info/PKG-INFO
+[8.104s] writing dependency_links to ../../../build/simulation/simulation.egg-info/dependency_links.txt
+[8.106s] writing entry points to ../../../build/simulation/simulation.egg-info/entry_points.txt
+[8.106s] writing requirements to ../../../build/simulation/simulation.egg-info/requires.txt
+[8.109s] writing top-level names to ../../../build/simulation/simulation.egg-info/top_level.txt
+[8.111s] writing manifest file '../../../build/simulation/simulation.egg-info/SOURCES.txt'
+[8.135s] reading manifest file '../../../build/simulation/simulation.egg-info/SOURCES.txt'
+[8.135s] adding license file 'LICENSE'
+[8.138s] writing manifest file '../../../build/simulation/simulation.egg-info/SOURCES.txt'
+[8.138s] running build
+[8.139s] running build_py
+[8.140s] creating /home/user/AetherPlan/build/simulation/build
+[8.140s] creating /home/user/AetherPlan/build/simulation/build/lib
+[8.141s] creating /home/user/AetherPlan/build/simulation/build/lib/simulation
+[8.142s] copying simulation/ik_tool.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation
+[8.147s] copying simulation/coppelia_client.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation
+[8.148s] copying simulation/ik_try.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation
+[8.152s] copying simulation/observer.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation
+[8.153s] copying simulation/__init__.py -> /home/user/AetherPlan/build/simulation/build/lib/simulation
+[8.154s] running install
+[8.168s] running install_lib
+[8.189s] creating /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation
+[8.190s] copying /home/user/AetherPlan/build/simulation/build/lib/simulation/ik_tool.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation
+[8.196s] copying /home/user/AetherPlan/build/simulation/build/lib/simulation/coppelia_client.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation
+[8.198s] copying /home/user/AetherPlan/build/simulation/build/lib/simulation/ik_try.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation
+[8.199s] copying /home/user/AetherPlan/build/simulation/build/lib/simulation/observer.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation
+[8.207s] copying /home/user/AetherPlan/build/simulation/build/lib/simulation/__init__.py -> /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation
+[8.223s] byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/ik_tool.py to ik_tool.cpython-310.pyc
+[8.223s] byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/coppelia_client.py to coppelia_client.cpython-310.pyc
+[8.233s] byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/ik_try.py to ik_try.cpython-310.pyc
+[8.237s] byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/observer.py to observer.cpython-310.pyc
+[8.250s] byte-compiling /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation/__init__.py to __init__.cpython-310.pyc
+[8.260s] running install_data
+[8.264s] creating /home/user/AetherPlan/install/simulation/share/ament_index
+[8.264s] creating /home/user/AetherPlan/install/simulation/share/ament_index/resource_index
+[8.264s] creating /home/user/AetherPlan/install/simulation/share/ament_index/resource_index/packages
+[8.264s] copying resource/simulation -> /home/user/AetherPlan/install/simulation/share/ament_index/resource_index/packages
+[8.272s] copying package.xml -> /home/user/AetherPlan/install/simulation/share/simulation
+[8.272s] running install_egg_info
+[8.310s] Copying ../../../build/simulation/simulation.egg-info to /home/user/AetherPlan/install/simulation/lib/python3.10/site-packages/simulation-0.0.0-py3.10.egg-info
+[8.328s] running install_scripts
+[8.688s] Installing coppelia_client script to /home/user/AetherPlan/install/simulation/lib/simulation
+[8.701s] Installing observer script to /home/user/AetherPlan/install/simulation/lib/simulation
+[8.711s] writing list of installed files to '/home/user/AetherPlan/build/simulation/install.log'
+[9.206s] Invoked command in '/home/user/AetherPlan/simulation/src/simulation' returned '0': PYTHONPATH=/home/user/AetherPlan/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/AetherPlan/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/simulation build --build-base /home/user/AetherPlan/build/simulation/build install --record /home/user/AetherPlan/build/simulation/install.log --single-version-externally-managed install_data

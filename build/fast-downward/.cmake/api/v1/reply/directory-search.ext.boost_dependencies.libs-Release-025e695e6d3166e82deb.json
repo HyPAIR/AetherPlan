@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "search/ext/boost_dependencies/libs",
+		"source" : "search/ext/boost_dependencies/libs"
+	}
+}

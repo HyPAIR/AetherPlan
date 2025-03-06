@@ -1,0 +1,6 @@
+[35m[1mConsolidate compiler generated dependencies of target MiniBoost[0m
+[  0%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/posix_api.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/instances.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cregex.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wide_posix_api.cpp.o[0m
+[  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/winstances.cpp.o[0m

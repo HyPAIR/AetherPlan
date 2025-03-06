@@ -1,0 +1,196 @@
+Arguments: Namespace(algorithm='adaptive', unit=False, enable=False, teleport=False, simulate=False)
+Objects: {2: 'sink', 3: 'stove', 4: 'celery', 5: 'radish'}
+Robot: 0
+Movable: [4, 5]
+Fixed: [1, 2, 3]
+Init: [('CanMove',), ('Conf', q0), ('AtConf', q0), ('HandEmpty',), ('Graspable', 4), ('Pose', 4, p0), ('AtPose', 4, p0), ('Stackable', 4, 1), ('Supported', 4, p0, 1), ('Stackable', 4, 2), ('Stackable', 4, 3), ('Graspable', 5), ('Pose', 5, p1), ('AtPose', 5, p1), ('Stackable', 5, 1), ('Supported', 5, p1, 1), ('Stackable', 5, 2), ('Stackable', 5, 3), ('Sink', 2), ('Stove', 3)]
+Goal: ('and', ('AtConf', q0), ('Cooked', 4))
+Streams: {TrajCollision, inverse-kinematics, plan-free-motion, plan-holding-motion, sample-grasp, sample-pose, test-cfree-approach-pose, test-cfree-pose-pose, test-cfree-traj-pose}
+Warning! All actions have no cost. Recommend setting unit_costs=True
+Warning! Undeclared predicates: ['conf', 'graspable']
+Setting negate=True for stream [test-cfree-pose-pose]
+Setting negate=True for stream [test-cfree-traj-pose]
+Setting negate=True for stream [test-cfree-approach-pose]
+Streams: [sample-pose:('?o', '?r')->('?p',), sample-grasp:('?o',)->('?g',), inverse-kinematics:('?o', '?p', '?g')->('?q', '?t'), plan-free-motion:('?q1', '?q2')->('?t',), plan-holding-motion:('?q1', '?q2', '?o', '?g')->('?t',)]
+Functions: []
+Negated: [test-cfree-pose-pose:('?o1', '?p1', '?o2', '?p2')->(), test-cfree-approach-pose:('?o1', '?p1', '?g1', '?o2', '?p2')->(), test-cfree-traj-pose:('?t', '?o2', '?p2')->()]
+Optimizers: []
+
+Iteration: 1 | Complexity: 0 | Skeletons: 0 | Skeleton Queue: 0 | Disabled: 0 | Evaluations: 20 | Eager Calls: 0 | Cost: inf | Search Time: 0.000 | Sample Time: 0.000 | Total Time: 0.000
+Attempt: 1 | Results: 1 | Depth: 0 | Success: False | Time: 0.049
+Stream plan (inf, 0, inf): None
+Action plan (inf, inf): None
+No plan: increasing complexity from 0 to 1
+
+Iteration: 2 | Complexity: 1 | Skeletons: 0 | Skeleton Queue: 0 | Disabled: 0 | Evaluations: 20 | Eager Calls: 0 | Cost: inf | Search Time: 0.049 | Sample Time: 0.000 | Total Time: 0.049
+Attempt: 1 | Results: 11 | Depth: 0 | Success: False | Time: 0.029
+Stream plan (inf, 0, inf): None
+Action plan (inf, inf): None
+No plan: increasing complexity from 1 to 2
+
+Iteration: 3 | Complexity: 2 | Skeletons: 0 | Skeleton Queue: 0 | Disabled: 0 | Evaluations: 20 | Eager Calls: 0 | Cost: inf | Search Time: 0.079 | Sample Time: 0.000 | Total Time: 0.079
+Attempt: 1 | Results: 24 | Depth: 1 | Success: False | Time: 0.068
+Attempt: 2 | Results: 62 | Depth: 1 | Success: False | Time: 0.172
+Attempt: 3 | Results: 89 | Depth: 0 | Success: True | Time: 0.331
+Stream plan (20, 20, 0.001): [sample-grasp:(4)->(#g0), sample-pose:(4, 3)->(#p1), inverse-kinematics:(4, #p1, #g0)->(#q2, #t60), test-cfree-traj-pose:(#t60, 5, p1)->(), inverse-kinematics:(4, p0, #g0)->(#q0, #t14), test-cfree-traj-pose:(#t14, 5, p1)->(), test-cfree-traj-pose:(#t14, 4, p0)->(), sample-pose:(4, 2)->(#p0), inverse-kinematics:(4, #p0, #g0)->(#q1, #t15), test-cfree-traj-pose:(#t15, 5, p1)->(), test-cfree-traj-pose:(#t15, 4, #p0)->(), test-cfree-pose-pose:(4, #p1, 5, p1)->(), test-cfree-pose-pose:(4, #p0, 5, p1)->(), test-cfree-approach-pose:(4, p0, #g0, 5, p1)->(), test-cfree-approach-pose:(4, #p0, #g0, 5, p1)->(), test-cfree-approach-pose:(4, #p1, #g0, 5, p1)->(), plan-free-motion:(#q2, q0)->(#t89), plan-free-motion:(q0, #q0)->(#t90), plan-holding-motion:(#q1, #q2, 4, #g0)->(#t88), plan-holding-motion:(#q0, #q1, 4, #g0)->(#t91)]
+Action plan (10, 0.000): [move_free(q0, #q0, #t90), pick(4, p0, #g0, #q0, #t14), move_holding(#q0, #q1, 4, #g0, #t91), place(4, #p0, #g0, #q1, #t15), clean(4, 2), pick(4, #p0, #g0, #q1, #t15), move_holding(#q1, #q2, 4, #g0, #t88), place(4, #p1, #g0, #q2, #t60), move_free(#q2, q0, #t89), cook(4, 3)]
+iter=0, outs=1) sample-grasp:(4)->[(g0)]
+iter=0, outs=1) sample-pose:(4, 3)->[(p2)]
+iter=inf, outs=0) inverse-kinematics:(4, p2, g0)->[]
+Sampling for up to 0.402 seconds
+iter=1, outs=1) sample-pose:(4, 3)->[(p3)]
+iter=inf, outs=0) inverse-kinematics:(4, p3, g0)->[]
+iter=1, outs=1) sample-grasp:(4)->[(g1)]
+iter=inf, outs=1) inverse-kinematics:(4, p2, g1)->[(q10, c0)]
+iter=inf, outs=1) test-cfree-traj-pose:(c0, 5, p1)->[()]
+iter=inf, outs=1) inverse-kinematics:(4, p0, g1)->[(q11, c1)]
+iter=inf, outs=1) test-cfree-traj-pose:(c1, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c1, 4, p0)->[()]
+iter=0, outs=1) sample-pose:(4, 2)->[(p4)]
+iter=inf, outs=1) inverse-kinematics:(4, p4, g1)->[(q13, c2)]
+iter=inf, outs=1) test-cfree-traj-pose:(c2, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-traj-pose:(c2, 4, p4)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p2, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-pose-pose:(4, p4, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p0, g1, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p4, g1, 5, p1)->[()]
+iter=inf, outs=1) test-cfree-approach-pose:(4, p2, g1, 5, p1)->[()]
+Solutions (1): [(75, np.float64(3.869))] | Time: 0.022
+iter=inf, outs=1) plan-free-motion:(q10, q0)->[(c3)]
+Solutions (1): [(99, np.float64(5.095))] | Time: 0.023
+iter=inf, outs=1) plan-free-motion:(q0, q11)->[(c4)]
+Solutions (1): [(99, np.float64(5.098))] | Time: 0.031
+iter=inf, outs=1) plan-holding-motion:(q13, q10, 4, g1)->[(c5)]
+Solutions (1): [(134, np.float64(6.95))] | Time: 0.044
+iter=inf, outs=1) plan-holding-motion:(q11, q13, 4, g1)->[(c6)]
+Summary: {complexity: 2, cost: 0.000, evaluations: 51, iterations: 3, length: 2, run_time: 0.621, sample_time: 0.190, search_time: 0.431, skeletons: 1, solutions: 1, solved: True, timeout: False}
+
+Total External Statistics
+External: sample-pose | n: 33 | p_success: 1.000 | overhead: 0.001
+External: sample-grasp | n: 16 | p_success: 1.000 | overhead: 0.003
+External: inverse-kinematics | n: 53 | p_success: 0.741 | overhead: 0.016
+External: plan-free-motion | n: 20 | p_success: 1.000 | overhead: 0.034
+External: plan-holding-motion | n: 20 | p_success: 1.000 | overhead: 0.123
+External: test-cfree-pose-pose | n: 20 | p_success: 1.000 | overhead: 0.000
+External: test-cfree-approach-pose | n: 30 | p_success: 1.000 | overhead: 0.001
+External: test-cfree-traj-pose | n: 57 | p_success: 1.000 | overhead: 0.001
+Wrote: statistics/py3/kuka-tamp.pkl
+         739325 function calls (714192 primitive calls) in 0.631 seconds
+
+   Ordered by: internal time
+   List reduced from 1650 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        7    0.030    0.004    0.030    0.004 {method 'read' of '_io.BufferedReader' objects}
+     4753    0.028    0.000    0.028    0.000 {built-in method pybullet.resetJointState}
+     3179    0.015    0.000    0.015    0.000 {built-in method pybullet.getClosestPoints}
+      139    0.012    0.000    0.012    0.000 {built-in method pybullet.calculateInverseKinematics}
+  9075/26    0.012    0.000    0.028    0.001 /home/user/anaconda3/envs/tampura_env/lib/python3.11/copy.py:128(deepcopy)
+      995    0.011    0.000    0.011    0.000 /home/user/AetherPlan/pddlstream/pddlstream/algorithms/../../downward/builds/release/bin/translate/pddl_parser/lisp_parser.py:20(tokenize)
+     5619    0.009    0.000    0.016    0.000 /home/user/AetherPlan/pddlstream/pddlstream/language/conversion.py:123(head_from_fact)
+    10639    0.008    0.000    0.011    0.000 /home/user/AetherPlan/pddlstream/pddlstream/algorithms/../../downward/builds/release/bin/translate/pddl/conditions.py:228(__init__)
+    56903    0.008    0.000    0.009    0.000 {built-in method builtins.isinstance}
+     5988    0.007    0.000    0.024    0.000 /home/user/AetherPlan/pddlstream/examples/pybullet/utils/pybullet_tools/utils.py:3510(expand_links)
+
+
+
+Solved: True
+Cost: 0.000
+Length: 10
+Deferred: 0
+Evaluations: 2
+ 1) move_free q0 q11 c4
+ 2) pick 4 p0 g1 q11 c1
+ 3) move_holding q11 q13 4 g1 c6
+ 4) place 4 p4 g1 q13 c2
+ 5) clean 4 2
+ 6) pick 4 p4 g1 q13 c2
+ 7) move_holding q13 q10 4 g1 c5
+ 8) place 4 p2 g1 q10 c0
+ 9) move_free q10 q0 c3
+10) cook 4 3
+Execute?Finish?argv[0]=
+startThreads creating 1 threads.
+starting thread 0
+started thread 0 
+argc=3
+argv[0] = --unused
+argv[1] = 
+argv[2] = --start_demo_name=Physics Server
+ExampleBrowserThreadFunc started
+X11 functions dynamically loaded using dlopen/dlsym OK!
+X11 functions dynamically loaded using dlopen/dlsym OK!
+Creating context
+Created GL 3.3 context
+Direct GLX rendering context obtained
+Making context current
+GL_VENDOR=Intel
+GL_RENDERER=Mesa Intel(R) UHD Graphics 620 (WHL GT2)
+GL_VERSION=4.6 (Core Profile) Mesa 23.2.1-1ubuntu3.1~22.04.3
+GL_SHADING_LANGUAGE_VERSION=4.60
+pthread_getconcurrency()=0
+Version = 4.6 (Core Profile) Mesa 23.2.1-1ubuntu3.1~22.04.3
+Vendor = Intel
+Renderer = Mesa Intel(R) UHD Graphics 620 (WHL GT2)
+b3Printf: Selected demo: Physics Server
+startThreads creating 1 threads.
+starting thread 0
+started thread 0 
+MotionThreadFunc thread started
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: base
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: iiwa_link_ee_kuka
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: iiwa_link_ee
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: base_link
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: base_link
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: No inertial data for link, using mass=1, localinertiadiagonal = 1,1,1, identity local inertial frame
+b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+
+b3Printf: base_link
+ven = Intel
+Workaround for some crash in the Intel OpenGL driver on Linux/Ubuntu
+ven = Intel
+Workaround for some crash in the Intel OpenGL driver on Linux/Ubuntu
+numActiveThreads = 0
+stopping threads
+Thread with taskId 0 exiting
+Thread TERMINATED
+destroy semaphore
+semaphore destroyed
+destroy main semaphore
+main semaphore destroyed
+finished
+numActiveThreads = 0
+btShutDownExampleBrowser stopping threads
+Thread with taskId 0 exiting
+Thread TERMINATED
+destroy semaphore
+semaphore destroyed
+destroy main semaphore
+main semaphore destroyed

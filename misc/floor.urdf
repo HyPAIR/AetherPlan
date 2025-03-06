@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="Floor">
+    <link name="robot_base">
+        <collision name="Floor">
+            <origin xyz="0.000000 0.000000 -0.100000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <box size="5.000000 5.000000 0.200000" />
+            </geometry>
+        </collision>
+        <visual name="box">
+            <origin xyz="0.000000 0.000000 -0.100000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/floor_box_vis_1.dae" />
+            </geometry>
+            <material name="box_material">
+                <color rgba="0.640000 0.640000 0.640000 1.0" />
+            </material>
+        </visual>
+        <visual name="box">
+            <origin xyz="0.000000 0.000000 -0.100000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <mesh filename="file:///home/user/AetherPlan/misc/floor_box_vis_2.dae" />
+            </geometry>
+            <material name="box_material">
+                <color rgba="0.950000 0.950000 0.950000 1.0" />
+            </material>
+        </visual>
+    </link>
+</robot>

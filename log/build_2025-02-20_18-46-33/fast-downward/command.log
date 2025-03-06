@@ -1,0 +1,4 @@
+Invoking command in '/home/user/AetherPlan/build/fast-downward': /usr/bin/cmake /home/user/AetherPlan/tampura/third_party/symk/src -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/fast-downward
+Invoked command in '/home/user/AetherPlan/build/fast-downward' returned '0': /usr/bin/cmake /home/user/AetherPlan/tampura/third_party/symk/src -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/fast-downward
+Invoking command in '/home/user/AetherPlan/build/fast-downward': /usr/bin/cmake --build /home/user/AetherPlan/build/fast-downward -- -j8 -l8
+Invoked command in '/home/user/AetherPlan/build/fast-downward' returned '-2': /usr/bin/cmake --build /home/user/AetherPlan/build/fast-downward -- -j8 -l8

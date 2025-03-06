@@ -1,0 +1,165 @@
+[0.047s] Invoking command in '/home/user/AetherPlan/build/fast-downward': /usr/bin/cmake /home/user/AetherPlan/tampura/third_party/symk/src -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/fast-downward
+[0.116s] [0mCMake Deprecation Warning at CMakeLists.txt:31 (cmake_minimum_required):
+[0.116s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.117s]   CMake.
+[0.117s] 
+[0.117s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.117s]   CMake that the project does not need compatibility with older versions.
+[0.117s] 
+[0.117s] [0m
+[0.119s] -- Defaulting to release build.
+[0.382s] -- The C compiler identification is GNU 11.4.0
+[0.616s] -- The CXX compiler identification is GNU 11.4.0
+[0.664s] -- Detecting C compiler ABI info
+[0.942s] -- Detecting C compiler ABI info - done
+[0.981s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.990s] -- Detecting C compile features
+[0.993s] -- Detecting C compile features - done
+[1.004s] -- Detecting CXX compiler ABI info
+[1.299s] -- Detecting CXX compiler ABI info - done
+[1.325s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.328s] -- Detecting CXX compile features
+[1.331s] -- Detecting CXX compile features - done
+[1.333s] -- Building for 64-bit.
+[1.341s] -- Performing Test CXX14_FOUND
+[1.590s] -- Performing Test CXX14_FOUND - Success
+[1.592s] [0mCMake Deprecation Warning at search/CMakeLists.txt:1 (cmake_minimum_required):
+[1.593s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[1.595s]   CMake.
+[1.599s] 
+[1.600s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.600s]   CMake that the project does not need compatibility with older versions.
+[1.600s] 
+[1.600s] [0m
+[1.668s] -- Enabling plugin causal_graph because plugin core_sources is enabled and depends on it.
+[1.668s] -- Enabling plugin int_hash_set because plugin core_sources is enabled and depends on it.
+[1.669s] -- Enabling plugin int_packer because plugin core_sources is enabled and depends on it.
+[1.669s] -- Enabling plugin ordered_set because plugin core_sources is enabled and depends on it.
+[1.669s] -- Enabling plugin segmented_vector because plugin core_sources is enabled and depends on it.
+[1.671s] -- Enabling plugin subscriber because plugin core_sources is enabled and depends on it.
+[1.671s] -- Enabling plugin successor_generator because plugin core_sources is enabled and depends on it.
+[1.671s] -- Enabling plugin task_properties because plugin core_sources is enabled and depends on it.
+[1.672s] -- Enabling plugin combining_evaluator because plugin max_evaluator is enabled and depends on it.
+[1.672s] -- Enabling plugin stubborn_sets because plugin stubborn_sets_atom_centric is enabled and depends on it.
+[1.672s] -- Enabling plugin eager_search because plugin plugin_astar is enabled and depends on it.
+[1.673s] -- Enabling plugin search_common because plugin plugin_astar is enabled and depends on it.
+[1.673s] -- Enabling plugin lazy_search because plugin plugin_lazy is enabled and depends on it.
+[1.675s] -- Enabling plugin priority_queues because plugin additive_heuristic is enabled and depends on it.
+[1.676s] -- Enabling plugin relaxation_heuristic because plugin additive_heuristic is enabled and depends on it.
+[1.682s] -- Enabling plugin domain_transition_graph because plugin context_enhanced_additive_heuristic is enabled and depends on it.
+[1.682s] -- Enabling plugin dynamic_bitset because plugin cegar is enabled and depends on it.
+[1.683s] -- Enabling plugin extra_tasks because plugin cegar is enabled and depends on it.
+[1.683s] -- Enabling plugin equivalence_relation because plugin mas_heuristic is enabled and depends on it.
+[1.683s] -- Enabling plugin sccs because plugin mas_heuristic is enabled and depends on it.
+[1.683s] -- Enabling plugin variable_order_finder because plugin mas_heuristic is enabled and depends on it.
+[1.683s] -- Enabling plugin lp_solver because plugin landmarks is enabled and depends on it.
+[1.684s] -- Enabling plugin max_cliques because plugin pdbs is enabled and depends on it.
+[1.684s] -- Enabling plugin sampling because plugin pdbs is enabled and depends on it.
+[1.684s] -- Enabling plugin null_pruning_method because plugin eager_search is enabled and depends on it.
+[1.685s] -- Enabling plugin named_vector because plugin lp_solver is enabled and depends on it.
+[1.685s] -- Using plugin: core_sources
+[1.686s] -- Using plugin: options
+[1.686s] -- Using plugin: utils
+[1.686s] -- Using plugin: alternation_open_list
+[1.686s] -- Using plugin: best_first_open_list
+[1.687s] -- Using plugin: epsilon_greedy_open_list
+[1.687s] -- Using plugin: pareto_open_list
+[1.687s] -- Using plugin: tiebreaking_open_list
+[1.687s] -- Using plugin: type_based_open_list
+[1.687s] -- Using plugin: dynamic_bitset
+[1.687s] -- Using plugin: named_vector
+[1.688s] -- Using plugin: equivalence_relation
+[1.688s] -- Using plugin: int_hash_set
+[1.688s] -- Using plugin: int_packer
+[1.688s] -- Using plugin: max_cliques
+[1.688s] -- Using plugin: priority_queues
+[1.689s] -- Using plugin: ordered_set
+[1.689s] -- Using plugin: segmented_vector
+[1.689s] -- Using plugin: subscriber
+[1.690s] -- Using plugin: evaluators_plugin_group
+[1.690s] -- Using plugin: const_evaluator
+[1.690s] -- Using plugin: g_evaluator
+[1.691s] -- Using plugin: combining_evaluator
+[1.691s] -- Using plugin: max_evaluator
+[1.691s] -- Using plugin: pref_evaluator
+[1.691s] -- Using plugin: weighted_evaluator
+[1.691s] -- Using plugin: sum_evaluator
+[1.691s] -- Using plugin: null_pruning_method
+[1.692s] -- Using plugin: limited_pruning
+[1.692s] -- Using plugin: stubborn_sets
+[1.693s] -- Using plugin: stubborn_sets_atom_centric
+[1.693s] -- Using plugin: stubborn_sets_simple
+[1.694s] -- Using plugin: stubborn_sets_ec
+[1.694s] -- Using plugin: search_common
+[1.695s] -- Using plugin: eager_search
+[1.697s] -- Using plugin: plugin_astar
+[1.699s] -- Using plugin: plugin_eager
+[1.700s] -- Using plugin: plugin_eager_greedy
+[1.701s] -- Using plugin: plugin_eager_wastar
+[1.701s] -- Using plugin: plugin_lazy
+[1.701s] -- Using plugin: plugin_lazy_greedy
+[1.701s] -- Using plugin: plugin_lazy_wastar
+[1.701s] -- Using plugin: enforced_hill_climbing_search
+[1.702s] -- Using plugin: iterated_search
+[1.702s] -- Using plugin: lazy_search
+[1.702s] -- Using plugin: lp_solver
+[1.702s] -- Using plugin: relaxation_heuristic
+[1.702s] -- Using plugin: additive_heuristic
+[1.702s] -- Using plugin: blind_search_heuristic
+[1.703s] -- Using plugin: context_enhanced_additive_heuristic
+[1.703s] -- Using plugin: cg_heuristic
+[1.703s] -- Using plugin: domain_transition_graph
+[1.703s] -- Using plugin: ff_heuristic
+[1.703s] -- Using plugin: goal_count_heuristic
+[1.703s] -- Using plugin: hm_heuristic
+[1.703s] -- Using plugin: landmark_cut_heuristic
+[1.704s] -- Using plugin: max_heuristic
+[1.704s] -- Using plugin: core_tasks
+[1.704s] -- Using plugin: extra_tasks
+[1.704s] -- Using plugin: causal_graph
+[1.704s] -- Using plugin: sampling
+[1.704s] -- Using plugin: successor_generator
+[1.705s] -- Using plugin: task_properties
+[1.705s] -- Using plugin: variable_order_finder
+[1.706s] -- Using plugin: cegar
+[1.706s] -- Using plugin: mas_heuristic
+[1.707s] -- Using plugin: landmarks
+[1.707s] -- Using plugin: operator_counting
+[1.707s] -- Using plugin: pdbs
+[1.707s] -- Using plugin: potentials
+[1.708s] -- Using plugin: sccs
+[1.708s] -- Using plugin: sdac
+[1.709s] -- Using plugin: symbolic
+[1.814s] -- Could NOT find OSI (missing: OSI_INCLUDE_DIRS OSI_LIBRARIES) 
+[1.824s] -- Building MiniBoost.
+[1.832s] -- Building Cudd with 64-bit.
+[1.865s] -- Configuring done
+[2.031s] -- Generating done
+[2.059s] -- Build files have been written to: /home/user/AetherPlan/build/fast-downward
+[2.100s] Invoked command in '/home/user/AetherPlan/build/fast-downward' returned '0': /usr/bin/cmake /home/user/AetherPlan/tampura/third_party/symk/src -DCMAKE_INSTALL_PREFIX=/home/user/AetherPlan/install/fast-downward
+[2.109s] Invoking command in '/home/user/AetherPlan/build/fast-downward': /usr/bin/cmake --build /home/user/AetherPlan/build/fast-downward -- -j8 -l8
+[2.361s] [  0%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/c_regex_traits.cpp.o[0m
+[2.368s] [  1%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/instances.cpp.o[0m
+[2.369s] [  1%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cpp_regex_traits.cpp.o[0m
+[2.369s] [  1%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/fileiter.cpp.o[0m
+[2.370s] [  1%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/icu.cpp.o[0m
+[2.373s] [  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cregex.cpp.o[0m
+[2.379s] [  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex.cpp.o[0m
+[2.388s] [  2%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/posix_api.cpp.o[0m
+[3.200s] [  3%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex_debug.cpp.o[0m
+[3.987s] [  3%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex_raw_buffer.cpp.o[0m
+[6.642s] [  3%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/regex_traits_defaults.cpp.o[0m
+[8.178s] [  4%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/static_mutex.cpp.o[0m
+[8.991s] [  4%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/usinstances.cpp.o[0m
+[9.814s] [  4%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/w32_regex_traits.cpp.o[0m
+[10.969s] [  5%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wc_regex_traits.cpp.o[0m
+[11.529s] [  5%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wide_posix_api.cpp.o[0m
+[11.571s] [  5%] [32mBuilding CXX object search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/winstances.cpp.o[0m
+[18.903s] gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:146: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/instances.cpp.o] Interrupt
+[18.904s] gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:104: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/cregex.cpp.o] Interrupt
+[18.904s] gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:160: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/posix_api.cpp.o] Interrupt
+[18.904s] gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:286: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/wide_posix_api.cpp.o] Interrupt
+[18.904s] gmake[2]: *** [search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/build.make:300: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/regex/src/winstances.cpp.o] Interrupt
+[18.904s] gmake[1]: *** [CMakeFiles/Makefile2:241: search/ext/boost_dependencies/libs/CMakeFiles/MiniBoost.dir/all] Interrupt
+[18.904s] gmake: *** [Makefile:91: all] Interrupt
+[18.962s] Invoked command in '/home/user/AetherPlan/build/fast-downward' returned '-2': /usr/bin/cmake --build /home/user/AetherPlan/build/fast-downward -- -j8 -l8

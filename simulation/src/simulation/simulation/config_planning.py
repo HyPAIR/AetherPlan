@@ -72,18 +72,34 @@ class RoboticsEnvironment():
         '''
         return [self.sim.getJointPosition(joint) for joint in self.joints]
     
-    def collides(self,target_config):
+    def collides(self,target_configs):
         '''
-        checks if given traget configuration self collides
-        #TODO: finish collision funtion
+        checks if any configuration self collides
+        input: List of configurations
+        output:bool collision 
         '''
-        pass
+        retVal = False
+        bufferedConfig = self.getConfig()
+        for target in target_configs:
+            self.setConfig(target)
+            res = self.sim.checkCollision(self.robotCollection,self.sim.handle_all)[0]
+            if res >0:
+                retVal = True
+                break
+            else:
+                res= self.sim.checkCollision(self.robotCollection,self.robotCollection)[0]
+                if res >0:
+                    retVal = True
+                    break
+        self.setConfig(bufferedConfig)
+        return retVal
     def setConfig(self,config):
         '''
         sets joint position to given configuration
-        #TODO: set joint to the config 
         '''
-        pass
+        n_joints = len(self.joints)
+        for i in range(n_joints):
+            self.sim.setJointPosition(self.joints[i],config[i])
     
     def findConfigs(self,pose):
         '''
@@ -113,11 +129,31 @@ class RoboticsEnvironment():
         returns: a valid configuration, a visualisation object
         '''
         bufferedConfig = self.getConfig()
+        i=0
         for target in configs:
-            if not self.collides(target):
-                #TODO: finish collision function
+            if not self.collides([target]):
+                print("found no collision")    
                 self.setConfig(target)
-                #TODO: finish set config function
+
+                if approachIKTr:
+                    pose = self.sim.getObjectPose(self.robotTip)
+                    targetPose = self.sim.multiplyPoses(pose,approachIKTr)
+                    self.sim.setObjectPose(self.robotTarget,targetPose)
+                    ikEnv = self.simIK.createEnvironment()
+                    ikGroup = self.simIK.createGroup(ikEnv)
+                    ikEl,simToIk,ikToSim = self.simIK.addElementFromScene(ikEnv,ikGroup,self.robotBase,self.robotTip,self.robotTarget,self.simIK.constraint_pose)
+                    ikJoints=[]
+                    for joint in self.joints:
+                        ikJoints.append(simToIk[joint])
+                    
+                    path = self.simIK.generatePath(ikEnv,ikGroup,ikJoints,simToIk[self.robotTip],4)
+                    self.simIK.eraseEnvironment(ikEnv)
+                    if path:
+                        #convert path into a list of configs to check for collisions
+                        print(path)
+            else:
+                print(f"collision in config {i}")
+            i+=1
 
     def ActionPick(self,pickPose,approachIKTr,withdrawIktr):
         #fing possible configurations

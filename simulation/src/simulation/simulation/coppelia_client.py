@@ -168,52 +168,7 @@ class RoboticEnvironment():
         else:
             print("No valid IK configuration found for the target pose.")
             return None
-    def get_target_configuration_deprecated(self, target_pose):
-        """
-        Gets a joint configuration for the given target_pose using the deprecated simIK.findConfig.
-        
-        :param target_pose: A tuple or list with 6 values [x, y, z, alpha, beta, gamma]
-                            representing the desired target pose.
-        :return: A list of joint values (configuration) if found, otherwise None.
-        """
-        # Set the target dummy's pose to the desired target_pose.
-        # Note: target_pose = [x, y, z, alpha, beta, gamma]
-        # self.sim.setObjectPosition(self.target_dummy, -1, target_pose[0:3])
-        # self.sim.setObjectOrientation(self.target_dummy, -1, target_pose[3:6])
-        
-        # (Re)initialize IK if needed. Ensure self.ik_env and self.ik_group are valid.
-        self.setup_ik()  # This function should set self.ik_env and self.ik_group correctly.
-        
-        # Define parameters for the IK search:
-        thresholdDist = 0.1  # Only consider configurations that produce a tip within 0.1 units of the target.
-        maxTime = 0.5        # Maximum search time in seconds.
-        metric = [1, 1, 1, 0.1]  # Pose metric: weights for [dx, dy, dz, dAngle]. Adjust if necessary.
-        
-        try:
-            # Call the deprecated simIK.findConfig to search for an IK solution.
-            joint_config = self.simIK.findConfig(
-                self.ik_env,
-                self.ik_group,
-                self.joint_handles,
-                thresholdDist,
-                maxTime,
-                metric,
-                None,   # No validation callback
-                None    # No auxiliary data
-            )
-        except Exception as e:
-            print("Error during simIK.findConfig:", e)
-            ik_joints = self.simIK.getConfigForTipPose(self.ik_env, self.ik_group,self.joint_handles)
-            
-            print("Joint handles:", self.joint_handles)
-            return None
-        
-        if joint_config:
-            print("Found IK configuration (deprecated):", joint_config)
-            return joint_config
-        else:
-            print("No valid IK configuration found using simIK.findConfig.")
-            return None
+
  
     def move_to_config(self,target_config):
         #moves manipulator to target c space config in radians

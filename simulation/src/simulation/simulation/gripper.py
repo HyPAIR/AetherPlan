@@ -57,7 +57,7 @@ class Robotiq85F():
             raise Exception("No handle found for Right target for Robotiq")
         
         #### extra handlers - for picking ########
-        self.connector = self.API.sim.getObject("/UR10/attachPoint") #to connect and disconnet the bloc instead of relying on physics
+        self.connector = self.API.sim.getObject("/UR10/ROBOTIQ85/attachPoint") #to connect and disconnet the bloc instead of relying on physics
         self.sensor = self.API.sim.getObject('/UR10/ROBOTIQ85/attachProxSensor') #proximity sensor
         
         self.robotiqRealLTip = self.API.sim.getObject('/UR10/ROBOTIQ85/LfingerTip') #Left finger of gripper to check if the gripper closed and touches the bloc
@@ -120,7 +120,7 @@ class Robotiq85F():
         # Check if both fingers are within the threshold distance from the object
         if dist_left < grasp_threshold and dist_right < grasp_threshold:
             # Fake the grasp by attaching the object to the gripper
-            self.API.sim.setObjectParent(object_handle, self.connector, True)
+            #self.API.sim.setObjectParent(object_handle, self.connector, True)
             print("Grasp confirmed, object attached to the gripper")
             isClosed = True
 
@@ -147,7 +147,7 @@ class Robotiq85F():
 
         if self.API.simIK.handleGroup(self.ikEnvRobotiq,self.ikGroup_undampedRobotiq2,{"syncWorlds":"true"})!= self.API.simIK.result_success:
             self.API.simIK.handleGroup(self.ikEnvRobotiq,self.ikGroup_dampedRobotiq2,{"syncWorlds":"true"})
-        
+        # self.disconnect()
     
     def test_gripper_movement(self):
         print("Starting test for gripper movement...")
@@ -214,13 +214,13 @@ class Robotiq85F():
         return n
         
     
-    # #Disconnect the bloc
-    # #To have no parent, parentHandle=-1
-    # def disconnect(self,parentHandle:int=-1):
-    #     #check that the block is already connected to the connector 
-    #     connectorCurrentChild = self.API.sim.getObjectChild(self.connector,0)
-    #     self.API.sim.setObjectParent(connectorCurrentChild,parentHandle,True)
-           
+    #Disconnect the bloc
+    #To have no parent, parentHandle=-1
+    def disconnect(self,parentHandle:int=-1):
+        #check that the block is already connected to the connector 
+        connectorCurrentChild = self.API.sim.getObjectChild(self.connector,0)
+        self.API.sim.setObjectParent(connectorCurrentChild,parentHandle,True)
+               
 
 
     

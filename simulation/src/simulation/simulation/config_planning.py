@@ -278,7 +278,12 @@ class RoboticsEnvironment():
             'maxJerk' : self.ikMaxJerk 
         }
         self.sim.moveToPose(p)
+
     def ActionPick(self,pickPose,approachIKTr,withdrawIktr):
+
+        '''
+        Action to pick objects (does not close the gripper )
+        '''
         #fing possible configurations
         configs = self.findConfigs(pickPose)
         #if more than one configuration is present, pick a valid one 
@@ -295,37 +300,92 @@ class RoboticsEnvironment():
             print(f'selected configuration: {pickConfig}')
             #plan path to the selected configuration
             path = self.findPath(pickConfig)
+            if passiveVizShape:
+                self.sim.removeObjects([passiveVizShape])
             if path:
                 print('Found a path from current config to pick config')
                 #follow the path
                 self.followPath(path)
-                self.sim.wait(5)
+                self.sim.wait(1)
                 #delete the visualization
-                if passiveVizShape:
-                    self.sim.removeObjects([passiveVizShape])
+            #Approach the object
             pose = self.sim.getObjectPose(self.robotTip)
             pose = self.sim.multiplyPoses(pose,approachIKTr)
-            #TODO:Move to specific pose
+            #TODO: open the gripper and wait
+            gripper = Robotiq85F(self)
+            gripper.openGripper()
+            self.sim.wait(2)
             self.moveToPose(pose)
+            #close the gripper and hold the item
+            gripper.closeGripper(self.sim.getObject('/pillar1'))
+            self.sim.wait(5)
+            #witdraw from position
+            pose = self.sim.getObjectPose(self.robotTip)
+            pose = self.sim.multiplyPoses(pose,withdrawIktr)
+            self.moveToPose(pose)
+            return 1
         else:
             print('Failed to find a valid configuration for the desired pick')
             return 0
-  
+    def ActionPlace(self,placePose,approachIkTr):
+        '''
+        Action to pick objects (does not close the gripper )
+        '''
+        #fing possible configurations
+        configs = self.findConfigs(placePose)
+        #if more than one configuration is present, pick a valid one 
+        n_configs=len(configs)
+        if n_configs>0:
+            #A funciton to select valid configurations
+            print(f'Found {n_configs} potential configurations')
+            placeConfig,passiveVizShape = self.selectOneValidConfig(configs,approachIkTr,[])
+            if placeConfig is None:
+                path = None
+                print('Failed to find a valid configuration for the desired pick')
+                return 0
+            self.sim.step()
+            print(f'selected configuration: {placeConfig}')
+            #plan path to the selected configuration
+            path = self.findPath(placeConfig)
+            if passiveVizShape:
+                self.sim.removeObjects([passiveVizShape])
+            if path:
+                print('Found a path from current config to place config')
+                #follow the path
+                self.followPath(path)
+                self.sim.wait(1)
+                #delete the visualization
+            #Approach the object
+            pose = self.sim.getObjectPose(self.robotTip)
+            pose = self.sim.multiplyPoses(pose,approachIkTr)
+            #TODO: open the gripper and wait
+            gripper = Robotiq85F(self)
+            # gripper.disconnect()
+            self.moveToPose(pose)
+            gripper.openGripper()
+            self.sim.wait(2)
+            
+            return 1
+        else:
+            print('Failed to find a valid configuration for the desired place')
+            return 0
+        pass
 
 def main():
     env = RoboticsEnvironment()
     env.connect()
     env.initialize_params()
     initConfig = env.getConfig()
-    
     #get a pick pose
     pickItem = env.sim.getObject('/pickPose')
     pickPose = env.sim.getObjectPose(pickItem)
-    #TODO: open the gripper and wait
-
-    #pick the item
     #the appoach and withdrawal transforms have distance as pose transform
-    outcome = env.ActionPick(pickPose,[0, 0, -0.105, 0, 0, 0, 1],[0, 0,0.105, 0, 0, 0, 1])
+    outcome_pick = env.ActionPick(pickPose,[ -0.10,0,0, 0, 0, 0, 1],[0.10,0,0, 0, 0, 0, 1])
+    placeTarget = env.sim.getObject('/placePose')
+    placePose =env.sim.getObjectPose(placeTarget)
+    # placePose[0]+=0.6
+    outcome_place = env.ActionPlace(placePose,[ -0.10,0,0, 0, 0, 0, 1])
+    #pick the item
 
     # q = input('Quit ?')
     env.stop_simulation()

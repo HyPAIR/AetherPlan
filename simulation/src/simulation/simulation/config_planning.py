@@ -2,6 +2,7 @@ from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 import math
 import numpy as np
 import copy
+from gripper import Robotiq85F
 class RoboticsEnvironment():
     def __init__(self):
         self.client = RemoteAPIClient('localhost',23000)
@@ -135,6 +136,8 @@ class RoboticsEnvironment():
         bufferedConfig = self.getConfig()
         i=0
         target = configs[i]
+        retVal=None
+        passiveVizShape = None
         for i in range(len(configs)):
             target = configs[i]
             if not self.collides([target]):
@@ -256,6 +259,7 @@ class RoboticsEnvironment():
             dt = self.sim.getSimulationTime() -st
         p = self.sim.getPathInterpolatedConfig(pathPts,times,times[-1])
         self.setTargetConfig(p)
+
     def moveToPose(self,pose):
         '''
         This works based on the rucking trajectory generator
@@ -283,6 +287,10 @@ class RoboticsEnvironment():
             #A funciton to select valid configurations
             print(f'Found {n_configs} potential configurations')
             pickConfig,passiveVizShape = self.selectOneValidConfig(configs,approachIKTr,withdrawIktr)
+            if pickConfig is None:
+                path = None
+                print('Failed to find a valid configuration for the desired pick')
+                return 0
             self.sim.step()
             print(f'selected configuration: {pickConfig}')
             #plan path to the selected configuration
@@ -291,7 +299,7 @@ class RoboticsEnvironment():
                 print('Found a path from current config to pick config')
                 #follow the path
                 self.followPath(path)
-                self.sim.wait(1)
+                self.sim.wait(5)
                 #delete the visualization
                 if passiveVizShape:
                     self.sim.removeObjects([passiveVizShape])
@@ -301,6 +309,7 @@ class RoboticsEnvironment():
             self.moveToPose(pose)
         else:
             print('Failed to find a valid configuration for the desired pick')
+            return 0
   
 
 def main():

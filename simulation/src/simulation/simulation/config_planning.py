@@ -1,6 +1,7 @@
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 import math
-
+import numpy as np
+import copy
 class RoboticsEnvironment():
     def __init__(self):
         self.client = RemoteAPIClient('localhost',23000)
@@ -100,6 +101,9 @@ class RoboticsEnvironment():
         n_joints = len(self.joints)
         for i in range(n_joints):
             self.sim.setJointPosition(self.joints[i],config[i])
+    def setTargetConfig(self,c):
+        for i in range(len(self.joints)):
+            self.sim.setJointTargetPosition(self.joints[i],c[i])
     
     def findConfigs(self,pose):
         '''
@@ -130,7 +134,9 @@ class RoboticsEnvironment():
         '''
         bufferedConfig = self.getConfig()
         i=0
-        for target in configs:
+        target = configs[i]
+        for i in range(len(configs)):
+            target = configs[i]
             if not self.collides([target]):
                 print("found no collision")    
                 self.setConfig(target)
@@ -150,22 +156,149 @@ class RoboticsEnvironment():
                     self.simIK.eraseEnvironment(ikEnv)
                     if path:
                         #convert path into a list of configs to check for collisions
-                        print(path)
+                        path = np.array(path)
+                        c_space_dim = len(self.joints)
+                        path = np.resize(path,(path.size//c_space_dim,c_space_dim))
+                        #if there is a collision in any of the configs in the path, invalidate target config
+                        if self.collides(path):
+                            target=None
+                        else:
+                            #if there is no collision in any of the configs in the path check if witdraw transformation is valid
+                            if withdrawIkTr:
+                                targetPose = self.sim.multiplyPoses(targetPose,withdrawIkTr)
+                                self.sim.setObjectPose(self.robotTarget,targetPose)
+                                ikEnv = self.simIK.createEnvironment()
+                                ikGroup = self.simIK.createGroup(ikEnv)
+                                ikEl,simToIk,ikToSim = self.simIK.addElementFromScene(ikEnv,ikGroup,self.robotBase,self.robotTip,self.robotTarget,self.simIK.constraint_pose)
+                                ikJoints=[]
+                                for joint in self.joints:
+                                    ikJoints.append(simToIk[joint])
+                                path = self.simIK.generatePath(ikEnv,ikGroup,ikJoints,simToIk[self.robotTip],4)
+                                self.simIK.eraseEnvironment(ikEnv)
+                                if path:
+                                    path = np.array(path)
+                                    path = np.resize(path,(path.size//c_space_dim,c_space_dim))
+                                    if self.collides(path):
+                                        target=None
+                                else:
+                                    target = None
+                    else:
+                        #if there isn't a valid path invalidate target config
+                        target = None
+                        break
             else:
                 print(f"collision in config {i}")
-            i+=1
+                #collision in base config invalidates target config
+                target = None
+            
+            if target:
+                retVal =target
+                objectList = self.sim.getObjectsInTree(self.robotBase,self.sim.sceneobject_shape)
+                objectCloneList = copy.deepcopy(objectList)
+                objectList =[]
+                for obj in objectCloneList:
+                    if self.sim.getBoolProperty(obj,'visible'):
+                        objectList.append(obj)
+                objectList = self.sim.copyPasteObjects(objectList)
+                passiveVizShape = self.sim.groupShapes(objectList,True)
+                self.sim.setBoolProperty(passiveVizShape, 'respondable',False)
+                self.sim.setBoolProperty(passiveVizShape, 'dynamic',False)
+                self.sim.setBoolProperty(passiveVizShape,'collidable',False)
+                self.sim.setBoolProperty(passiveVizShape,'measurable',False)
+                self.sim.setBoolProperty(passiveVizShape,'detectable',False)
+                self.sim.setColorProperty(self.sim.getIntArrayProperty(passiveVizShape,'meshes')[0],'color.diffuse',[1,0,0])
+                self.sim.setObjectAlias(passiveVizShape,'passiveVisualizationShape')
+                break
+        self.setConfig(bufferedConfig)
+        return retVal,passiveVizShape
+    def findPath(self,config):
+        #set true for joints who's positions are to be used for default values
+        useForProjection=[]
+        for i in range(len(self.joints)):
+            useForProjection.append(i<3 and 1 or 0)       
 
+        task = self.simOMPL.createTask('task')
+        self.simOMPL.setAlgorithm(task,self.pathPlanningAlgo)
+        self.simOMPL.setStateSpaceForJoints(task,self.joints,useForProjection)
+        self.simOMPL.setCollisionPairs(task,[self.robotCollection,self.sim.handle_all,self.robotCollection,self.robotCollection])
+        self.simOMPL.setStartState(task,self.getConfig())
+        self.simOMPL.setGoalState(task,config)
+        self.simOMPL.setup(task)
+
+        if self.simOMPL.solve(task,self.pathPlanningMaxtime) and self.simOMPL.hasExactSolution(task):
+            self.simOMPL.simplifyPath(task,self.pathPlanningSimplificationTime)
+            retVal = self.simOMPL.getPath(task)
+        else:
+            retVal = None
+        self.simOMPL.destroyTask(task)
+        return retVal
+    def followPath(self,path):
+        minMaxVel=[]
+        for vel in self.fkMaxVel:
+            minMaxVel.append(-vel)
+            minMaxVel.append(vel)
+        minMaxAcc =[]
+        for acc in self.fkMaxAccel:
+            minMaxAcc.append(-acc)
+            minMaxAcc.append(acc)
+        pl,_ = self.sim.getPathLengths(path,6)
+        try :
+            followPathScript = followPathScript
+        except:
+            followPathScript =-1
+        pathPts,times,followPathScript = self.sim.generateTimeOptimalTrajectory(path,pl,minMaxVel,minMaxAcc,1000,'not-a-knot',5,None)
+        st = self.sim.getSimulationTime()
+        dt =0
+        while dt < times[-1]:
+            p = self.sim.getPathInterpolatedConfig(pathPts,times,dt)
+            self.setTargetConfig(p)
+            self.sim.step()
+            dt = self.sim.getSimulationTime() -st
+        p = self.sim.getPathInterpolatedConfig(pathPts,times,times[-1])
+        self.setTargetConfig(p)
+    def moveToPose(self,pose):
+        '''
+        This works based on the rucking trajectory generator
+        Interpolation between current pose and target pose. No planning
+        '''
+        p={
+            'ik' :{
+                'tip' : self.robotTip,
+                'target' : self.robotTarget,
+                'base' : self.robotBase,
+                'joints' : self.joints
+            },
+            'targetPose' : pose,
+            'maxVel' : self.ikMaxVel,
+            'maxAccel' : self.ikMaxAccel,
+            'maxJerk' : self.ikMaxJerk 
+        }
+        self.sim.moveToPose(p)
     def ActionPick(self,pickPose,approachIKTr,withdrawIktr):
         #fing possible configurations
         configs = self.findConfigs(pickPose)
         #if more than one configuration is present, pick a valid one 
         n_configs=len(configs)
         if n_configs>0:
-            #TODO:write a funciton to select valid configurations
+            #A funciton to select valid configurations
             print(f'Found {n_configs} potential configurations')
             pickConfig,passiveVizShape = self.selectOneValidConfig(configs,approachIKTr,withdrawIktr)
             self.sim.step()
-            print('selected configuration')
+            print(f'selected configuration: {pickConfig}')
+            #plan path to the selected configuration
+            path = self.findPath(pickConfig)
+            if path:
+                print('Found a path from current config to pick config')
+                #follow the path
+                self.followPath(path)
+                self.sim.wait(1)
+                #delete the visualization
+                if passiveVizShape:
+                    self.sim.removeObjects([passiveVizShape])
+            pose = self.sim.getObjectPose(self.robotTip)
+            pose = self.sim.multiplyPoses(pose,approachIKTr)
+            #TODO:Move to specific pose
+            self.moveToPose(pose)
         else:
             print('Failed to find a valid configuration for the desired pick')
   
